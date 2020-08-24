@@ -31,7 +31,7 @@
 				      <td>
 				      	<input type="number" min="0" max="100" value="0" style='width: 50px;'>
 				      </td>
-				      <td><button>Chọn</button> </td>
+				      <td><button>Chọn</button></td>
 				    </tr>
 				  </tbody>
 				<?php
