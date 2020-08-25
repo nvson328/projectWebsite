@@ -21,16 +21,16 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="publics/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="publics/css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="publics/css/responsive.css">
     <!-- color -->
-    <link id="changeable-colors" rel="stylesheet" href="css/colors/orange.css" />
+    <link id="changeable-colors" rel="stylesheet" href="publics/css/colors/orange.css" />
 
     <!-- Modernizer -->
-    <script src="js/modernizer.js"></script>
+    <script src="publics/js/modernizer.js"></script>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -73,10 +73,10 @@
 
     <a href="#" class="scrollup" style="display: none;">Scroll</a>
     <!-- ALL JS FILES -->
-    <script src="js/all.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="publics/js/all.js"></script>
+    <script src="publics/js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
-    <script src="js/custom.js"></script>
+    <script src="publics/js/custom.js"></script>
 </body>
 
 </html>

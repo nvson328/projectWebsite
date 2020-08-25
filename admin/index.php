@@ -68,7 +68,11 @@
                         $table = new table_c();
                         $table->tables();
                         break;
-                    
+                    case 'list-foods':
+                        include_once 'controller/food_c.php';
+                        $food = new food_c();
+                        $food->food();
+                        break;
                     default:
                         include_once'layout/main-wrapper.php';                  
                         break;

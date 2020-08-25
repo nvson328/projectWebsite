@@ -8,10 +8,7 @@
                         <a href="index.php?page=list-tables&method=list">Quản lý bàn ăn</a>
                     </li>
                     <li>
-                        <a href="#">Quản lý thực đơn</a>
-                        <ul>
-                            <a href="mailto:joe@example.com?subject=feedback" "email me">email me</a><li>Gọi đồ</li>
-                        </ul>    
+                        <a href="index.php?page=list-foods&method=list">Quản lý thực đơn</a> 
                     </li>
                 </ul>
             </div>
