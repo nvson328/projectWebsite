@@ -5,7 +5,7 @@
 		private $food;
 		function __construct()
 		{
-			$this->food = new food_c();
+			$this->food = new food_m();
 		}
         public function food(){
             if (isset($_GET['method'])) {
@@ -15,10 +15,10 @@
 			}
             
             switch ($method) {
-            	case 'list-food':
-            	$rs_food = $this->table->getFood();            		
-            		include_once 'views/food/list-foods.php';
-            		break;
+            	// case 'list-food':
+            	// 	$rs_food = $this->food->getFood();            		
+            	// 	include_once 'views/food/list-foods.php';
+            	// 	break;
             	default:
             		$rs_food= $this->food->getFood();
             		include_once 'views/food/list-foods.php';

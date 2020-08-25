@@ -24,14 +24,14 @@
 
 				  <tbody>
 				    <tr>
-				      <th scope="row"><?php echo $stt; ?></th>
+				      <th style='padding-top: 40px; font-size: 20px;' scope="row"><?php echo $stt; ?></th>
 				      <td style='padding-top: 40px; font-size: 20px;'><?= $value['ten_mon_an']?></td>
 				      <td><img src="publics-admin/images/<?= $value['anh_chi_tiet'] ?>" alt=""></td>
 				      <td style='padding-top: 40px; font-size: 20px;'><?= number_format($value['gia_tien']).'<sup>đ</sup>'; ?></td>
 				      <td>
-				      	<input type="number" min="0" max="100" value="0" style='width: 50px;'>
+				      	<input  type="number" min="0" max="100" value="0" style='width: 50px; margin-top: 30px; font-size: 20px;'>
 				      </td>
-				      <td><button>Chọn</button></td>
+				      <td><button style='margin-top: 30px; font-size: 20px;'>Chọn</button></td>
 				    </tr>
 				  </tbody>
 				<?php
@@ -40,7 +40,7 @@
 			</table>
 		</div>
 		<div class="col-md-4">
-			<table class="table" border="1">
+			<table style="margin-left:50px;" class="table" border="1">
 			  <thead class="thead-dark">
 			    <tr>
 			      <th>Món ăn</th>
@@ -50,14 +50,24 @@
 			  </thead>
 			  <tbody>
 			    <tr>
-			      <td>Mark</td>
-			      <td>Otto</td>
-			      <td>Otto</td>
+			      <td>Bánh mì bơ tỏi</td>
+			      <td>3</td>
+			      <td>90,000</td>
+				</tr>
+				<tr>
+			      <td>Salad</td>
+			      <td>2</td>
+			      <td>120,000</td>
+				</tr>
+				<tr>
+			      <td>Cánh gà BBQ</td>
+			      <td>3</td>
+			      <td>240,000</td>
 			    </tr>
 			  </tbody>
 			</table>
-			<label>Thành tiền: </label><br>
-			<button type="submit" name="order_done">Đồng ý</button>
+			<label style="margin-left:50px;">Thành tiền: </label><br>
+			<button style="margin-left:200px;" type="submit" name="order_done">Đồng ý</button>
 		</div>
 		</form>
 	</div>

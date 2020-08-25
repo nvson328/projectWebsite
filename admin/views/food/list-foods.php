@@ -31,7 +31,6 @@
 				      <td>
 				      	<input type="number" min="0" max="100" value="0" style='width: 50px;'>
 				      </td>
-				      <td><button>Chọn</button></td>
 				    </tr>
 				  </tbody>
 				<?php
@@ -40,24 +39,12 @@
 			</table>
 		</div>
 		<div class="col-md-2">
-			<table class="table" border="1">
-			  <thead class="thead-dark">
-			    <tr>
-			      <th>Món ăn</th>
-			      <th>Số lượng</th>
-			      <th>Tổng tiền</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <td>Mark</td>
-			      <td>Otto</td>
-			      <td>Otto</td>
-			    </tr>
-			  </tbody>
-			</table>
-			<label>Thành tiền: </label><br>
-			<button type="submit" name="order_done">Đồng ý</button>
+
+				<button  class="btn btn-primary" name="add_food" >Thêm món ăn mới</button><br><br>
+				<button  class="btn btn-primary" name="del_food" >Xóa món ăn</button><br><br>
+				<button  class="btn btn-primary" name="edit_member" >Sửa món ăn</button>
+
+			
 		</div>
 		</form>
 	</div>
