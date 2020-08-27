@@ -8,13 +8,13 @@
 						Reservations			
 					</h2>
                         </div>
-                        <h4 class="form-title">BOOKING FORM</h4>
-                        <p>PLEASE FILL OUT ALL REQUIRED* FIELDS. THANKS!</p>
+                        <h4 class="form-title">PHIẾU ĐẶT BÀN</h4>
+                        <p>VUI LÒNG ĐIỀN ĐẦY ĐỦ THÔNG TIN ĐỂ ĐẶT BÀN</p>
 
                         <form id="contact-form" method="post" class="reservations-box" name="contactform" action="mail.php">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-box">
-                                    <input type="text" name="form_name" id="form_name" placeholder="Name" required="required" data-error="Firstname is required.">
+                                    <input type="text" name="name" id="name" placeholder="Name" required="required" data-error="Firstname is required.">
                                 </div>
                             </div>
                             <!-- end col -->
@@ -33,7 +33,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="form-box">
                                     <select name="no_of_persons" id="no_of_persons" class="selectpicker">
-                                        <option selected disabled>No. Of persons</option>
+                                        <option selected disabled></option>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -53,32 +53,10 @@
                                 </div>
                             </div>
                             <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-box">
-                                    <select name="preferred_food" id="preferred_food" class="selectpicker">
-                                        <option selected disabled>preferred food</option>
-                                        <option>Indian</option>
-                                        <option>Continental</option>
-                                        <option>Mexican</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="form-box">
-                                    <select name="occasion" id="occasion" class="selectpicker">
-                                        <option selected disabled>Occasion</option>
-                                        <option>Wedding</option>
-                                        <option>Birthday</option>
-                                        <option>Anniversary</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- end col -->
 
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="reserve-book-btn text-center">
-                                    <button class="hvr-underline-from-center" type="submit" value="SEND" id="submit">BOOK MY TABLE </button>
+                                    <button class="hvr-underline-from-center" type="submit" value="SEND" id="submit">ĐẶT BÀN</button>
                                 </div>
                             </div>
                             <!-- end col -->

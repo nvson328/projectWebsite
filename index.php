@@ -21,16 +21,16 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="publics/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="publics/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="publics/css/responsive.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <!-- color -->
-    <link id="changeable-colors" rel="stylesheet" href="publics/css/colors/orange.css" />
+    <link id="changeable-colors" rel="stylesheet" href="css/colors/orange.css" />
 
     <!-- Modernizer -->
-    <script src="publics/js/modernizer.js"></script>
+    <script src="js/modernizer.js"></script>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -48,35 +48,55 @@
 	
     <?php include_once 'layout/banner.php'; ?>
     <!-- end banner -->
+    <?php include_once 'layout/about.php' ?>
+    <?php
+     if (isset($_GET['page'])){
+            $page = $_GET['page'];
+        }else{
+            $page = 'home';
+        }
 
-    <?php include_once'layout/about.php'; ?>
-    <!-- end about us -->
+        switch ($page) {            
+            default:
+                include_once 'controller/home_c.php';
+                $home = new home_c();
+                $home->home();
+                break;
+        }
+    ?>
 
-    <?php include_once'layout/special_menu.php'; ?>
-    <!-- end special-menu -->
-
-    <?php include_once'layout/menu.php'; ?>
-    <!-- end menu -->
-
-    <?php include_once'layout/our_team.php'; ?>
-    <!-- end team-main -->
-
-    <?php include_once'layout/gallery.php'; ?>
-    <!-- end gallery-main -->
-
-    <?php include_once'layout/reservation.php'; ?>
-    <!-- end reservations-main -->
-        
-
-    <?php include_once'layout/footer.php'; ?>
+    <div id="footer" class="footer-main">
+        <div class="footer-news pad-top-100 pad-bottom-70 parallax">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                            <h2 class="ft-title color-white text-center"> Newsletter </h2>
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        </div>
+                        <form>
+                            <input type="email" placeholder="Enter your e-mail id">
+                            <a href="#" class="orange-btn"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+                        </form>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end footer-news -->
+        <?php include_once'layout/footer.php'; ?>
+        <!-- end footer-box -->
+    </div>
     <!-- end footer-main -->
 
     <a href="#" class="scrollup" style="display: none;">Scroll</a>
     <!-- ALL JS FILES -->
-    <script src="publics/js/all.js"></script>
-    <script src="publics/js/bootstrap.min.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
-    <script src="publics/js/custom.js"></script>
+    <script src="js/custom.js"></script>
 </body>
 
 </html>

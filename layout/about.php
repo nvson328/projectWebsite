@@ -4,7 +4,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                         <h2 class="block-title"> Đôi nét về nhà hàng </h2>
-                        <h3>NHÀ HÀNG ẨM THỰC SONTUNG</h3>
+                        <h3>NHÀ HÀNG ẨM THỰC FOOD FUNDAY</h3>
                         <p> Một không gian thoáng đãng, rợp bóng cây xanh, bạn có thể vừa ăn, vừa thư giãn và đón những làn gió mát lành từ ngoài sông thổi vào, bạn sẽ thấy thật thoải mái và cảm thấy ngon miệng hơn rất nhiều. Không những thế, nơi đây còn là khu vực thích hợp để tổ chức các bữa ăn liên hoan, sinh nhật và họp mặt bạn bè. Tuy nhiên, nếu bạn muốn một không gian riêng tư, không quá ồn ào thì hệ thống phòng vip cũng được đầu tư đầy đủ các trang thiết bị để phục vụ nhu cầu đa dạng của quý thực khách.</p>
 
                         <p> Không chỉ thu hút thực khách bằng các món ẩm thực thơm ngon khoái khẩu, NHÀ HÀNG ẨM THỰC SONTUNG còn chinh phục thực khách bằng sự thân thiện, gần gũi và chuyên nghiệp của đội ngũ nhân viên lễ tân và phục vụ. Mặc dù đông khách, nhưng với số lượng lớn nhân viên phục vụ, quý khách sẽ không phải đợi chờ quá lâu là món ăn nóng hổi, thơm phức đã được mang lên.</p>

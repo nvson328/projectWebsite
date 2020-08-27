@@ -9,26 +9,28 @@
                         <p class="title-caption text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
                     </div>
                     <div class="team-box">
-
                         <div class="row">
+                            <?php 
+                                foreach ($rs6 as $key => $val) {
+                            ?>
                             <div class="col-md-4 col-sm-6">
                                 <div class="sf-team">
                                     <div class="thumb">
-                                        <a href="#"><img src="images/staff-01.jpg" alt=""></a>
+                                        <a href="#"><img src="images/<?php echo $val['anh_dau_bep'] ?>" alt=""></a>
                                     </div>
                                     <div class="text-col">
-                                        <h3>John Doggett</h3>
-                                        <p>Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Aenean commodo ligula.</p>
+                                        <h3><?php echo $val['ten_dau_bep'] ?></h3>
+                                        <p><?php echo $val['gioi_thieu'] ?></p>
                                         <ul class="team-social">
-                                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
+                            <?php 
+                                }
+                            ?>
                             <!-- end col -->
-                            <div class="col-md-4 col-sm-6">
+                            <!-- <div class="col-md-4 col-sm-6">
                                 <div class="sf-team">
                                     <div class="thumb">
                                         <a href="#"><img src="images/staff-02.jpg" alt=""></a>
@@ -43,9 +45,9 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- end col -->
-                            <div class="col-md-4 col-sm-6">
+                            <!-- <div class="col-md-4 col-sm-6">
                                 <div class="sf-team">
                                     <div class="thumb">
                                         <a href="#"><img src="images/staff-03.jpg" alt=""></a>
@@ -60,7 +62,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- end col -->
                         </div>
                         <!-- end row -->
