@@ -27,7 +27,8 @@
 
     <!-- Custom Fonts -->
     <link href="publics-admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="publics-admin/css/myCSS.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link href="publics-admin/css/myCSS.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

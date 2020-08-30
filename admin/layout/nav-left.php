@@ -10,5 +10,11 @@
                     <li>
                         <a href="index.php?page=list-foods&method=list">Quản lý thực đơn</a> 
                     </li>
+                    <li>
+                        <a href="index.php?page=list-foods&method=list">Thêm món ăn</a> 
+                    </li>
+                    <li>
+                        <a href="index.php?page=list-foods&method=list">Thêm bàn ăn</a> 
+                    </li>
                 </ul>
             </div>

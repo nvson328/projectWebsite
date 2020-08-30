@@ -4,3 +4,20 @@
 .table_done{
 	background: #fff;
 }
+img {
+    width: 80px;
+    height: 80px;
+}
+/* .icon-action{
+    position: absolute;
+    background: blue;
+    top:50px;
+    right: 200px;
+}
+.table{
+    position: relative;
+} */
+.tb_body{
+    padding-top: 40px; 
+    font-size: 20px;
+}

@@ -26,7 +26,7 @@
 				    <tr>
 				      <th style='padding-top: 40px; font-size: 20px;' scope="row"><?php echo $stt; ?></th>
 				      <td style='padding-top: 40px; font-size: 20px;'><?= $value['ten_mon_an']?></td>
-				      <td><img src="publics-admin/images/<?= $value['anh_chi_tiet'] ?>" alt=""></td>
+				      <td><img style="width:80px; height:80px;" src="publics-admin/images/<?= $value['anh_chi_tiet'] ?>" alt=""></td>
 				      <td style='padding-top: 40px; font-size: 20px;'><?= number_format($value['gia_tien']).'<sup>đ</sup>'; ?></td>
 				      <td>
 				      	<input  type="number" min="0" max="100" value="0" style='width: 50px; margin-top: 30px; font-size: 20px;'>

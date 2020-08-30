@@ -225,3 +225,16 @@ ul.alert-dropdown {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
+/* .action{
+    position: relative;
+}
+.del-action{
+    position:absolute; 
+    top:40px; 
+    left:50px;
+}
+.edit-action{
+    position:absolute; 
+    top:40px; 
+    left:10px;
+} */
