@@ -27,8 +27,10 @@
 
     <!-- Custom Fonts -->
     <link href="publics-admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link href="publics-admin/css/myCSS.css" rel="stylesheet" type="text/css">
+    <script src="resource/ckd/ckeditor.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -74,6 +76,21 @@
                         $food = new food_c();
                         $food->food();
                         break;
+                    case 'add-foods':
+                        include_once 'controller/food_c.php';
+                        $food = new food_c();
+                        $food->food();
+                        break;
+                    case 'add-tables':
+                        include_once 'controller/table_c.php';
+                        $table = new table_c();
+                        $table->tables();
+                        break;
+                    case 'details-table':
+                        include_once 'controller/table_c.php';
+                        $table = new table_c();
+                        $table->tables();
+                        break;
                     default:
                         include_once'layout/main-wrapper.php';                  
                         break;
@@ -95,10 +112,10 @@
     <script src="publics-admin/js/bootstrap.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="publics-admin/js/plugins/morris/raphael.min.js"></script>
-    <script src="publics-admin/js/plugins/morris/morris.min.js"></script>
-    <script src="publics-admin/js/plugins/morris/morris-data.js"></script>
     <script src="publics-admin/js/myJava.js"></script>
+   <!--  <script src="publics-admin/js/plugins/morris/raphael.min.js"></script>
+    <script src="publics-admin/js/plugins/morris/morris.min.js"></script>
+    <script src="publics-admin/js/plugins/morris/morris-data.js"></script> -->
 
 </body>
 
