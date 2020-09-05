@@ -6,7 +6,7 @@
                         <h2 class="block-title text-center">
 						Our Menu 	
 					</h2>
-                        <p class="title-caption text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                        <p class="title-caption text-center">Đây là những món ăn ưa thích được khách bình chọn tại cửa hàng</p>
                     </div>
                     <div class="tab-menu">
                         <div class="slider slider-nav">
@@ -39,7 +39,7 @@
 
                                         <div>
                                             <h3><?php echo $val['ten_mon_an'] ?></h3>
-                                            <p>
+                                            <p class="show">
                                                 <?php echo $val['gioi_thieu'] ?>
                                             </p>
                                         </div>
@@ -59,7 +59,7 @@
                                         <img src="images/<?php echo $val['anh_chi_tiet'] ?>" alt="" class="img-responsive">
                                         <div>
                                             <h3><?php echo $val['ten_mon_an'] ?></h3>
-                                            <p>
+                                            <p class="show">
                                                 <?php echo $val['gioi_thieu'] ?>    
                                             </p>
                                         </div>
@@ -79,7 +79,7 @@
                                         <img src="images/<?php echo $val['anh_chi_tiet'] ?>" alt="" class="img-responsive">
                                         <div>
                                             <h3><?php echo $val['ten_mon_an'] ?></h3>
-                                            <p>
+                                            <p class="show">
                                                 <?php echo $val['gioi_thieu'] ?>
                                             </p>
                                         </div>
@@ -99,7 +99,7 @@
                                         <img src="images/<?php echo $val['anh_chi_tiet'] ?>" alt="" class="img-responsive">
                                         <div>
                                             <h3><?php echo $val['ten_mon_an'] ?></h3>
-                                            <p>
+                                            <p class="show" >
                                                 <?php echo $val['gioi_thieu'] ?>
                                             </p>
                                         </div>

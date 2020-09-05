@@ -8,13 +8,15 @@
        }
 
        public function home(){
+          
            if (isset($_GET['page'])){
                $page = $_GET['page'];
            }else{
                $page = 'home';
            }
 
-           switch ($page) {            
+           switch ($page) {   
+
                default:
                    $rs1  = $this->home->getThucdon2();
                    include_once 'views/special_menu.php';
@@ -25,9 +27,8 @@
                    include_once 'views/menu.php';
                    $rs6 = $this->home->getDaubep();
                    include_once 'views/our_team.php';
-                   if (isset($_POST['submit'])) {
-                       
-                   }
+                   include_once 'layout/gallery.php';
+                   $rs7 = $this->home->getLoaiban();
                    include_once 'views/reservation.php';
                    break;
            }

@@ -1,0 +1,43 @@
+.show{
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+#data_table img {
+    width: 50px;
+    height: 50px;
+}
+
+#radio_ban_an{
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#radio_ban_an + #img_ban_an {
+    cursor: pointer;
+}
+
+#radio_ban_an:checked + #img_ban_an {
+    outline: 3px solid #e75b1e;
+}
+
+
+
+.success-1 {
+    position: fixed;
+    bottom: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 20px;
+    font-size: 16px;
+    background: #e75b1e;
+    color: #fff;
+    z-index: 99;
+    display: none; 
+}

@@ -144,7 +144,7 @@
 		var date = new Date();
 		var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
 		$('#date-picker').datetimepicker({
-			format: 'DD.MM.YYYY',
+			format: 'YYYY-MM-DD',
 			minDate: today
 		});
 		$('#time-picker').datetimepicker({

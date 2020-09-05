@@ -20,7 +20,7 @@
                                     </div>
                                     <div class="text-col">
                                         <h3><?php echo $val['ten_dau_bep'] ?></h3>
-                                        <p><?php echo $val['gioi_thieu'] ?></p>
+                                        <p class="show"><?php echo $val['gioi_thieu'] ?></p>
                                         <ul class="team-social">
                                         </ul>
                                     </div>
