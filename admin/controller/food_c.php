@@ -15,10 +15,19 @@
 			}
             
             switch ($method) {
-            	// case 'list-food':
-            	// 	$rs_food = $this->food->getFood();            		
-            	// 	include_once 'views/food/list-foods.php';
-            	// 	break;
+				case 'add':
+					if(isset($_POST['sm_add'])){
+						$file = $_FILES['avatar'];
+						echo '<pre>';
+						print_r($file);
+						echo '</pre>';
+
+						// $filename = $file[]
+					}
+					include_once 'views/food/add-foods.php';
+					break;
+					case 'edit':
+						
             	default:
             		$rs_food= $this->food->getFood();
             		include_once 'views/food/list-foods.php';

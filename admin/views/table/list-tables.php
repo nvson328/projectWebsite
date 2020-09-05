@@ -1,16 +1,20 @@
+<?php include_once 'views/table/details-table.php' ?>
 <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12"> 
-                        <h2>Quản lý bàn ăn</h2>
+                        <h2>Quản lý hóa đơn</h2>
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Bàn</th>
-                                        <th>Loại bàn</th>
-                                        <th>Trạng thái</th>
-                                        <th>Thời gian còn lại</th>
+                                        <th>Mã hóa đơn</th>
+                                        <th>Mã khách hàng</th>
+                                        <th>Mã bàn</th>
+                                        <th>Ngày đặt bàn</th>
+                                        <th>Giờ đặt bàn</th>
+                                        <th>Ghi chú</th>
                                         <th>Chức năng</th>
+
                                     </tr>
                                 </thead>
                               <!-- <?php echo '<pre>';
@@ -20,63 +24,38 @@
                                  -->
                                 <tbody>
                                     <?php                             
-
-                                foreach($rsTables as $key => $value){
-                                   
+                                $stt=0;
+                                foreach($rsBill as $key => $value){
+                                   $stt++;
    
                                 ?>
-                                    <?php
-                            
-                                        if (isset($_SESSION['order'][$value['ma_ban']])) {
-
-                                    ?>
-                                        <tr>
-                                        <td class="table_done"><?php echo $value['ma_ban']; ?></td>
-                                        <td class="table_done"><?php echo $value['ten_loai_ban'] ?></td>
-                                        <td class="">Bàn đã có người</td>
-                                        <td class="table_done">00:48:30</td>
-                                        <td class="table_done">
-                                            <a href="index.php?page=edit-member">
-                                                <button class="btn btn-primary" name="edit_member">Chi tiết</button>
-                                            </a>
-                                            <a href="index.php?page=list-tables&method=order&id=<?= $value['ma_ban'] ?>">
-                                                <button  class="btn btn-primary" name="edit_member" >Gọi món</button>
+                                
+                                    <tr>
+                                        <td class="table_done"><?php echo $value['ma_hoa_don'] ?></td>
+                                        <td class="table_done"><?php echo $value['ma_khach_hang'] ?></td>
+                                        <td class=""> <?php echo $value['ma_ban'] ?></td>
+                                        <td class="table_done"><?php echo $value['ngay_dat_ban'] ?></td>
+                                        <td class="table_done"><?php echo $value['gio_dat_ban'] ?></td>
+                                        <td class="table_done"></td>
+                                        <td>
+                                           
+                                                <button class="btn btn-primary" onclick="detailsBill(<?= $value['ma_hoa_don']?>)" id="btn_details_<?= $value['ma_hoa_don']?>" value="<?= $value['ma_hoa_don']?>" data-toggle="modal" data-target="#modal-detail" name="details-table">Chi tiết</button>
+                                         
+                                            <a href="index.php?page=list-tables&method=order&id=<?= $value['ma_hoa_don'] ?>">
+                                                <button  class="btn btn-primary" name="order_food" >Gọi món</button>
                                             </a>
                                             <a onclick="return confirm('Bạn có thực sự muốn xóa học viên này không?');" href="index.php?page=list-member&method=del&id=<?php echo $value['id_hocvien']; ?>">
                                                 <button class="btn btn-danger">Thanh toán</button>
-                                            </a>
+                                            </a> 
                                         </td>
-                                    </tr>
-                                        <?php
-                                    }else{
-                                        ?>
-                                        <tr>
-                                        <td class="table_default"><?php echo $value['ma_ban']; ?></td>
-                                        <td class="table_default"><?php echo $value['ten_loai_ban'] ?></td>
-                                        <td class="table_default">Bàn trống</td>
-                                        <td class="table_default">00:48:30</td>
-                                        <td class="table_default">
-                                            <a href="index.php?page=edit-member">
-                                                <button class="btn btn-primary" name="chiTiet">Chi tiết</button>
-                                            </a>
-                                            <a href="index.php?page=list-tables&method=order&id=<?= $value['ma_ban'] ?>">
-                                                <button  class="btn btn-primary" name="order" >Gọi món</button>
-                                            </a>
-                                            <a onclick="return confirm('Bạn có thực sự muốn xóa học viên này không?');" href="index.php?page=list-member&method=del&id=<?php echo $value['id_hocvien']; ?>">
-                                                <button class="btn btn-danger">Thanh toán</button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                        <?php
-                                         }?>
-                                    
-                                </tbody>
+                                    </tr>  
                                     <?php 
-                                    }?>
+                                    }?>   
+                                </tbody>
+                                    
                             </table>
                         </div>
                     </div>
-                    
                 <!-- /.row -->
 
             </div>
