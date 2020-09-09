@@ -28,9 +28,9 @@
 					      <td><img style="width:80px; height:80px;" src="publics-admin/images/<?= $value['anh_chi_tiet'] ?>" alt=""></td>
 					      <td style='padding-top: 40px; font-size: 20px;'><?= number_format($value['gia_tien']).'<sup>đ</sup>'; ?></td>
 					      <td>
-                      			<input id="btn_qty_<?php echo $value['ma_thuc_don']; ?>" type="number" value="1" min="1" max="5"/>
+                      			<input style='margin-top: 30px;width: 40px; font-size: 20px;' id="btn_qty_<?php echo $value['ma_thuc_don']; ?>" type="number" value="1" min="1" max="50"/>
                     		</td>
-					      <td><button onclick="addOrders(<?= $value['ma_thuc_don'] ?>,<?= $_GET['id'] ?>)" id="btn_<?= $value['ma_thuc_don'] ?>" value='<?= $value['ma_thuc_don'] ?>' style='margin-top: 30px; font-size: 20px;'>Chọn</button></td>
+					      <td><button onclick="addOrders(<?= $value['ma_thuc_don'] ?>,<?= $_GET['id'] ?>)" id="btn_<?= $value['ma_thuc_don'] ?>" value="<?= $value['ma_thuc_don'] ?>" style='margin-top: 30px; font-size: 20px;' >Chọn</button></td>
 					    </tr>
 					  </tbody>
 					<?php
@@ -63,20 +63,20 @@
 				    		
 					      <td><?= $value['ten_mon_an'] ?></td>
 					      <td><?php echo $value['qty']; ?></td>
-					      <td><?= $value['gia_tien']*$value['qty'] ?></td>
+					      <td><?= number_format($value['gia_tien']*$value['qty']).'<sup>đ</sup>' ?></td>
 					    	<td><button onclick="del(<?= $value['ma_thuc_don']?>,<?= $_GET['id'] ?>)" id="btn_del_<?=$value['ma_thuc_don'] ?>" value="<?= $value['ma_thuc_don']?>"><i class="far fa-window-close"></i></button></td>
 					</tr>
 					
 					<?php }}?>
 					<tr>
-						<td colspan="4"><label style="margin-left:50px;">Thành tiền: <?php if(isset($_SESSION['sum'])){echo $_SESSION['sum'];}else{echo "0<sup>đ</sup>";}  ?></label><br></td>
+						<td colspan="4"><label style="margin-left:50px;">Thành tiền: <?php if(isset($_SESSION['sum'])){echo number_format($_SESSION['sum']).'<sup>đ</sup>';}else{echo "0<sup>đ</sup>";}  ?></label><br></td>
 					</tr>
 				  </tbody>
 				</table>
 				
 			</div>
 			
-			<button style="margin-left:200px;" type="submit" name="order_done">Đồng ý</button>
+			<button style="margin-left:200px;" id="btn-done" onclick="done(<?= $_GET['id'] ?>)">Đồng ý</button>
 		</div>
 	
  </div>

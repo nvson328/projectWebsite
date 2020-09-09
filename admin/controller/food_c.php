@@ -26,10 +26,20 @@
 					}
 					include_once 'views/food/add-foods.php';
 					break;
-					case 'edit':
-						
-            	default:
-            		$rs_food= $this->food->getFood();
+				// case 'del':
+				// 	if(isset($_GET['id'])) {
+				// 		$id = $_GET['id'];
+				// 		$del=$this->food->delFood($id);
+				// 		if($del){
+				// 			header('location:index.php?page=list-foods');
+				// 		}
+				// 		else{
+				// 			echo"lỗi không xóa đc";
+				// 		}
+				// 	}
+				// 	break;
+				default:
+					$rs_food= $this->food->getFood();
             		include_once 'views/food/list-foods.php';
             		break;
             }

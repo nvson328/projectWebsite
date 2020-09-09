@@ -22,3 +22,15 @@ function del(id_del, id_order){
 		$("#load-table-order").load('index.php?page=list-tables&method=order&id='+ id_order +' #table-order');
 	});
 }
+function done(id){
+	$.get('index.php?page=list-tables&method=done',{id : id }, function(){
+		
+	});
+	
+}
+// function del(id_delFood){
+// 	var id_delFood = $('#btn_delFood_' + id_delFood).val();
+// 	$.get('index.php?page=list-foods&method=list',{id_delFood : id_delFood}, function(){
+// 		$("#load-listFood").load('index.php?page=list-foods&method=list&id='+ id_delFood +' #table-order');
+// 	});
+// }

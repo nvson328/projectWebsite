@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 27, 2020 lúc 03:33 PM
+-- Thời gian đã tạo: Th9 07, 2020 lúc 08:42 AM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.6
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbl_banan` (
   `ma_ban` int(10) NOT NULL,
   `ma_loai_ban` int(10) NOT NULL,
+  `ten_ban` varchar(50) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -37,32 +38,32 @@ CREATE TABLE `tbl_banan` (
 -- Đang đổ dữ liệu cho bảng `tbl_banan`
 --
 
-INSERT INTO `tbl_banan` (`ma_ban`, `ma_loai_ban`, `status`) VALUES
-(1, 1, 1),
-(2, 1, 1),
-(3, 1, 1),
-(4, 1, 1),
-(5, 1, 1),
-(6, 1, 1),
-(7, 1, 1),
-(8, 2, 1),
-(9, 2, 1),
-(10, 2, 1),
-(11, 2, 1),
-(12, 2, 1),
-(13, 2, 1),
-(14, 2, 1),
-(15, 2, 1),
-(16, 2, 1),
-(17, 2, 1),
-(18, 2, 1),
-(19, 2, 1),
-(20, 2, 1),
-(21, 2, 1),
-(22, 2, 1),
-(23, 3, 1),
-(24, 3, 1),
-(25, 3, 1);
+INSERT INTO `tbl_banan` (`ma_ban`, `ma_loai_ban`, `ten_ban`, `status`) VALUES
+(1, 1, 'Bàn hai người sô 1', 1),
+(2, 1, 'Bàn hai người sô 2', 1),
+(3, 1, 'Bàn hai người sô 3', 1),
+(4, 1, 'Bàn hai người sô 4', 1),
+(5, 1, 'Bàn hai người sô 5', 1),
+(6, 1, 'Bàn hai người sô 6', 1),
+(7, 1, 'Bàn hai người sô 7', 1),
+(8, 2, 'Bàn sáu người sô 1', 1),
+(9, 2, 'Bàn sáu người sô 2', 1),
+(10, 2, 'Bàn sáu người sô 3', 1),
+(11, 2, 'Bàn sáu người sô 4', 1),
+(12, 2, 'Bàn sáu người sô 5', 1),
+(13, 2, 'Bàn sáu người sô 6', 1),
+(14, 2, 'Bàn sáu người sô 7', 1),
+(15, 2, 'Bàn sáu người sô 8', 1),
+(16, 2, 'Bàn sáu người sô 9', 1),
+(17, 2, 'Bàn sáu người sô 10', 1),
+(18, 2, 'Bàn sáu người sô 11', 1),
+(19, 2, 'Bàn sáu người sô 12', 1),
+(20, 2, 'Bàn sáu người sô 13', 1),
+(21, 2, 'Bàn sáu người sô 14', 1),
+(22, 2, 'Bàn sáu người sô 15', 1),
+(23, 3, 'Bàn mười người sô 1', 1),
+(24, 3, 'Bàn mười người sô 2', 1),
+(25, 3, 'Bàn mười người số 3', 1);
 
 -- --------------------------------------------------------
 
@@ -165,7 +166,32 @@ CREATE TABLE `tbl_hoadon` (
 INSERT INTO `tbl_hoadon` (`ma_hoa_don`, `ma_khach_hang`, `ma_ban`, `ngay_dat_ban`, `gio_dat_ban`, `ghi_chu`, `status`) VALUES
 (1, 1, 12, '2020-08-20', '00:00:00', '', 1),
 (2, 3, 5, '2020-08-19', '00:00:00', '', 1),
-(3, 2, 1, '2020-08-22', '00:00:00', '', 1);
+(3, 2, 1, '2020-08-22', '00:00:00', '', 1),
+(4, 15, 2, '0000-00-00', '11:38:00', '', 1),
+(5, 16, 2, '0000-00-00', '11:38:00', '', 1),
+(6, 17, 3, '0000-00-00', '11:40:00', '', 1),
+(7, 16, 2, '0000-00-00', '99:44:07', '', 1),
+(8, 16, 1, '0000-00-00', '20:44:53', '', 1),
+(9, 16, 2, '0000-00-00', '15:48:17', '', 1),
+(10, 18, 13, '2020-09-02', '11:53:00', '', 1),
+(11, 19, 3, '2020-09-25', '06:37:00', '', 1),
+(12, 20, 2, '2020-09-04', '09:53:00', '', 1),
+(13, 21, 2, '2020-09-04', '09:53:00', '', 1),
+(14, 22, 2, '2020-09-04', '09:55:00', '', 1),
+(15, 23, 2, '2020-09-04', '09:56:00', '', 1),
+(16, 24, 2, '2020-09-04', '09:56:00', '', 1),
+(17, 25, 2, '2020-09-04', '10:03:00', '', 1),
+(18, 26, 2, '2020-09-04', '10:04:00', '', 1),
+(19, 27, 2, '2020-09-04', '10:06:00', '', 1),
+(20, 28, 2, '2020-09-04', '10:07:00', '', 1),
+(21, 29, 9, '2020-09-04', '10:08:00', '', 1),
+(22, 31, 2, '2020-09-04', '10:37:00', '', 1),
+(23, 32, 3, '2020-09-04', '10:37:00', '', 1),
+(24, 32, 3, '2020-09-04', '10:37:00', '', 1),
+(25, 33, 6, '2020-09-04', '10:37:00', '', 1),
+(26, 34, 24, '2020-09-04', '10:48:00', '', 1),
+(27, 35, 1, '2020-09-11', '07:30:00', '', 1),
+(28, 35, 24, '2020-09-17', '07:30:00', '', 1);
 
 -- --------------------------------------------------------
 
@@ -189,7 +215,38 @@ INSERT INTO `tbl_khachhang` (`ma_khach_hang`, `ten_khach_hang`, `so_dien_thoai`,
 (1, 'Vũ Xuân Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
 (2, 'Nguyễn Văn Sơn', '0986463215', 'nvson@gmail.com', 1),
 (3, 'Phạm Đăng Nam', '0976315649', 'nampham@gmail.com', 1),
-(4, 'Trần Anh Tú', '0974412365', 'tuta@gmail.com', 1);
+(4, 'Trần Anh Tú', '0974412365', 'tuta@gmail.com', 1),
+(5, 'Giàng A Páo', '0586542658', 'Apao@gmail.com', 1),
+(6, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(7, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(8, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(9, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(10, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(11, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(12, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(13, 'đá', '0986384632', 'vuxtit1210@gmail.com', 1),
+(14, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(15, 'A Lử', '0986384632', 'alu@gmail.com', 1),
+(16, 'A Lử', '0986384632', 'alu@gmail.com', 1),
+(17, 'Nguyễn Gia Bảo', '0986384632', 'giabao@gmail.com', 1),
+(18, 'Thị Nở', '0986384632', 'thino@oo.oo', 1),
+(19, 'Nam Nguyễn', '0986384632', 'namnuyen@gmail.com', 1),
+(20, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(21, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(22, 'Vũ Xuân Tugnf', '0986384632', 'tungvx72@wru.vn', 1),
+(23, 'đá', '654654', 'vuxtit1210@gmail.com', 1),
+(24, 'đá', '654654', 'vuxtit1210@gmail.com', 1),
+(25, 'Abcs', '0986384632', 'vuxtit1210@gmail.com', 1),
+(26, 'Vũ Tùng', '31', 'vuxtit1210@gmail.com', 1),
+(27, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(28, 'Vũ Tùng', '0986384632', 'tungvx72@wru.vn', 1),
+(29, 'Jang a Mùa', '0542658746', 'aMua@gmail.com', 1),
+(30, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(31, 'Vũ Tùng', '0986384632', 'tungvx72@wru.vn', 1),
+(32, 'Vũ Tùng', '0972853498', 'luasinh@gmail.com', 1),
+(33, 'Giàng thị Nở', '0972853475', 'thino@gmail.com', 1),
+(34, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(35, 'Đoàn quỳnh anh', '0862592140', 'quynhanh@gamil.com', 1);
 
 -- --------------------------------------------------------
 
@@ -395,13 +452,13 @@ ALTER TABLE `tbl_daubep`
 -- AUTO_INCREMENT cho bảng `tbl_hoadon`
 --
 ALTER TABLE `tbl_hoadon`
-  MODIFY `ma_hoa_don` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ma_hoa_don` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khachhang`
 --
 ALTER TABLE `tbl_khachhang`
-  MODIFY `ma_khach_hang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ma_khach_hang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_loaiban`

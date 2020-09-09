@@ -15,43 +15,61 @@
 			}
             
             switch ($method) {
+				case 'done':
+					if (isset($_GET['id'])) {
+						$id = $_GET['id'];
+						$rsCheck = $this->table->checkFood($id);
+						echo "<pre>";
+		                print_r($rsCheck);
+						echo '</pre>';
+						if(count($rsCheck) < 1){
+							foreach($_SESSION['cart'] as $key => $value){
+								$ma_thuc_don = $value['ma_thuc_don'];
+								$don_gia = $value['gia_tien'];		
+								$qty = $value['qty'];
+								$tong_tien = $value['gia_tien']*$value['qty'];
+									
+								$this->table->addFood($id, $ma_thuc_don, $don_gia, $qty, $tong_tien);
+							}
+						}else{
+
+							foreach($rsCheck as $key => $check){
+								
+								foreach($_SESSION['cart'] as $key => $value){
+								
+									$ma_thuc_don = $value['ma_thuc_don'];
+									$don_gia = $value['gia_tien'];
+												
+									if($check['ma_thuc_don']==$ma_thuc_don){
+										$check['so_luong'] += $value['qty'];
+										$tong_tien = $check['so_luong']*$don_gia;
+										$this->table->updateFood($ma_thuc_don, $don_gia, $check['so_luong'], $tong_tien);
+
+									}
+									else{
+										$qty = $value['qty'];
+										$tong_tien = $value['gia_tien']*$value['qty'];
+										
+										$this->table->addFood($id, $ma_thuc_don, $don_gia, $qty, $tong_tien);
+									
+									}
+								}
+							}
+													
+						}
+						
+						unset($_SESSION['cart']);
+						unset($_SESSION['sum']);	
+						header('location: index.php?page=list-tables');
+                	}
+				break;
 					
 				case 'order':
 					if(isset($_GET['id_del'])){
 						$id_del = $_GET['id_del'];
 						unset($_SESSION['cart'][$id_del]);
 					}
-         		if (isset($_GET['id'])) {
-					$id = $_GET['id'];
-                    if(isset($_POST['order_done'])){                   
-				
-						$rsCheck = $this->table->checkFood($id);
-						foreach($rsCheck as $key=>$check){
-							// echo($check['ma_thuc_don']).'<br>';
-							foreach($_SESSION['cart'] as $key => $value){
-							
-								$ma_thuc_don = $value['ma_thuc_don'];
-								$don_gia = $value['gia_tien'];
-											
-								if($check['ma_thuc_don']==$ma_thuc_don){
-									$check['so_luong'] += $value['qty'];
-									$tong_tien = $check['so_luong']*$don_gia;
-									echo($check['so_luong']);
-									$this->table->updateFood($ma_thuc_don, $don_gia, $check['so_luong'], $tong_tien);
-								}
-					
-								else{
-									$qty = $value['qty'];
-									$tong_tien = $value['gia_tien']*$value['qty'];
-									$this->table->addFood($id, $ma_thuc_don, $don_gia, $qty, $tong_tien);
-								
-								}
-							}
-						}
-						
-					
-                    }
-                }
+		     		
 	                
 	                if (isset($_GET['id_food'])) {
 	                	$id_food = $_GET['id_food'];

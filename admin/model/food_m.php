@@ -13,7 +13,13 @@ class food_m extends Connect{
             $pre->execute();
             return $pre->fetchAll(PDO::FETCH_ASSOC);
         }
-
+        // public function delFood($idDel){
+        //   $sql= "DELETE FROM tbl_thucdon WHERE ma_thuc_don = :idDel";
+        //   $pre=$this->pdo->prepare($sql);
+        //   // $pre->bindParam(':idFood',$idFood);
+        //   $pre->execute();
+            
+        // }
 }
 
 ?>

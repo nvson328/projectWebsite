@@ -86,11 +86,7 @@
                         $table = new table_c();
                         $table->tables();
                         break;
-                    case 'details-table':
-                        include_once 'controller/table_c.php';
-                        $table = new table_c();
-                        $table->tables();
-                        break;
+            
                     default:
                         include_once'layout/main-wrapper.php';                  
                         break;

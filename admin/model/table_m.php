@@ -65,11 +65,8 @@ class table_m extends Connect{
             $pre->bindParam(':tong_tien', $tong_tien);
             if($pre->execute()){
 		    	$_SESSION['check'] = 1;
-                // header('location: index.php?page=list-tables');
-                unset($_SESSION['cart']);
-                unset($_SESSION['sum']);
 		    }else{
-                echo "Saiiiiii!";
+                echo "<h1>Saiiiiii!</h1>";
             }
         }
         //update món ăn
@@ -82,10 +79,9 @@ class table_m extends Connect{
             $pre->bindParam(':tong_tien', $tong_tien);
             if($pre->execute()){
 		    	$_SESSION['check'] = 1;
-                header('location: index.php?page=list-tables');
-                unset($_SESSION['cart']);
-                unset($_SESSION['sum']);
-		    }
+		    }else{
+                echo "Saiiiiii!";
+            }
         }
         //Kiểm tra
         public function checkFood($ma_hoa_don){
