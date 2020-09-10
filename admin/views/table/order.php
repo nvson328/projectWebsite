@@ -44,7 +44,7 @@
 				    <tr>
 				      <th>Món ăn</th>
 				      <th>Số lượng</th>
-					  <th>Tổng tiền</th>
+					  <th>Thành tiền</th>
 					  <th>Chức năng</th>
 				    </tr>
 				  </thead>
@@ -69,7 +69,7 @@
 					
 					<?php }}?>
 					<tr>
-						<td colspan="4"><label style="margin-left:50px;">Thành tiền: <?php if(isset($_SESSION['sum'])){echo number_format($_SESSION['sum']).'<sup>đ</sup>';}else{echo "0<sup>đ</sup>";}  ?></label><br></td>
+						<td colspan="4"><label style="margin-left:50px;color:red;font-size:20px;">Tổng tiền: <?php if(isset($_SESSION['sum'])){echo number_format($_SESSION['sum']).'<sup>đ</sup>';}else{echo "0<sup>đ</sup>";}  ?></label><br></td>
 					</tr>
 				  </tbody>
 				</table>

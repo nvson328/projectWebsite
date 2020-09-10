@@ -2,10 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        
       </div>
       <div class="modal-body">
         <div id="load-table-order-detail">
@@ -19,9 +16,9 @@
               </tr>
             </thead>
               <?php 
-                  $_SESSION['sum']=0;
+                  $_SESSION['sum_details']=0;
                   foreach($_SESSION['rsDetails'] as $key => $value){ 
-                    $_SESSION['sum']+= $value['tong_tien'];
+                    $_SESSION['sum_details']+= $value['tong_tien'];
                   ?>
                   <tbody>
                     <td><?= $value['ten_mon_an'] ?></td>
@@ -31,7 +28,7 @@
                   </tbody>
               <?php } ?>
               <tr>
-                  <td colspan="4">Thành tiền :<?php if(isset($_SESSION['sum'])){echo number_format($_SESSION['sum']).'<sup>đ</sup>';}?></td>  
+                  <td colspan="4" style="color:red;font-size:20px;">Tổng tiền :<?php if(isset($_SESSION['sum_details'])){echo number_format($_SESSION['sum_details']).'<sup>đ</sup>';}?></td>  
               </tr>
           </table>
         </div>

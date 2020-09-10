@@ -64,7 +64,9 @@ class table_m extends Connect{
             $pre->bindParam(':so_luong', $so_luong);
             $pre->bindParam(':tong_tien', $tong_tien);
             if($pre->execute()){
-		    	$_SESSION['check'] = 1;
+                unset($_SESSION['cart']);
+                unset($_SESSION['sum']);	
+                header('location: index.php?page=list-tables');
 		    }else{
                 echo "<h1>Saiiiiii!</h1>";
             }
@@ -78,7 +80,9 @@ class table_m extends Connect{
             $pre->bindParam(':so_luong', $so_luong);
             $pre->bindParam(':tong_tien', $tong_tien);
             if($pre->execute()){
-		    	$_SESSION['check'] = 1;
+                unset($_SESSION['cart']);
+                unset($_SESSION['sum']);	
+                header('location: index.php?page=list-tables');
 		    }else{
                 echo "Saiiiiii!";
             }

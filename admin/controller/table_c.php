@@ -27,40 +27,31 @@
 								$ma_thuc_don = $value['ma_thuc_don'];
 								$don_gia = $value['gia_tien'];		
 								$qty = $value['qty'];
-								$tong_tien = $value['gia_tien']*$value['qty'];
-									
+								$tong_tien = $value['gia_tien']*$value['qty'];									
 								$this->table->addFood($id, $ma_thuc_don, $don_gia, $qty, $tong_tien);
 							}
-						}else{
-
-							foreach($rsCheck as $key => $check){
-								
-								foreach($_SESSION['cart'] as $key => $value){
-								
+						}
+						else{
+							foreach($rsCheck as $key => $check){								
+								foreach($_SESSION['cart'] as $key => $value){								
 									$ma_thuc_don = $value['ma_thuc_don'];
-									$don_gia = $value['gia_tien'];
-												
+									$don_gia = $value['gia_tien'];												
 									if($check['ma_thuc_don']==$ma_thuc_don){
 										$check['so_luong'] += $value['qty'];
 										$tong_tien = $check['so_luong']*$don_gia;
 										$this->table->updateFood($ma_thuc_don, $don_gia, $check['so_luong'], $tong_tien);
-
 									}
 									else{
 										$qty = $value['qty'];
-										$tong_tien = $value['gia_tien']*$value['qty'];
-										
-										$this->table->addFood($id, $ma_thuc_don, $don_gia, $qty, $tong_tien);
-									
+										$tong_tien = $value['gia_tien']*$value['qty'];										
+										$this->table->addFood($id, $ma_thuc_don, $don_gia, $qty, $tong_tien);									
 									}
 								}
-							}
-													
-						}
-						
-						unset($_SESSION['cart']);
-						unset($_SESSION['sum']);	
-						header('location: index.php?page=list-tables');
+							}													
+						}						
+						// unset($_SESSION['cart']);
+						// unset($_SESSION['sum']);	
+						// header('location: index.php?page=list-tables');
                 	}
 				break;
 					
@@ -101,12 +92,10 @@
 						$_SESSION['rsDetails'] = $rsDetails;
 						
 					}
-					echo '<pre>';
-						echo print_r($_SESSION['rsDetails']);
-						echo '</pre>';
 					include_once 'views/table/details-table.php';
             	default:
-            		$rsBill= $this->table->getHoadon();
+					$rsBill= $this->table->getHoadon();
+					$_SESSION['rsBill']= $rsBill;
             		include_once 'views/table/list-tables.php';
             		break;
             }

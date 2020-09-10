@@ -39,14 +39,11 @@
                                         <td class="table_done"></td>
                                         <td>
                                            
-                                                <button class="btn btn-primary" onclick="detailsBill(<?= $value['ma_hoa_don']?>)" id="btn_details_<?= $value['ma_hoa_don']?>" value="<?= $value['ma_hoa_don']?>" data-toggle="modal" data-target="#modal-detail" name="details-table">Chi tiết</button>
+                                                <button class="btn btn-danger" onclick="detailsBill(<?= $value['ma_hoa_don']?>)" id="btn_details_<?= $value['ma_hoa_don']?>" value="<?= $value['ma_hoa_don']?>" data-toggle="modal" data-target="#modal-detail" name="details-table">Chi tiết</button>
                                          
                                             <a href="index.php?page=list-tables&method=order&id=<?= $value['ma_hoa_don'] ?>">
                                                 <button  class="btn btn-primary" name="order_food" >Gọi món</button>
                                             </a>
-                                            <a onclick="return confirm('Bạn có thực sự muốn xóa học viên này không?');" href="index.php?page=list-member&method=del&id=<?php echo $value['id_hocvien']; ?>">
-                                                <button class="btn btn-danger">Thanh toán</button>
-                                            </a> 
                                         </td>
                                     </tr>  
                                     <?php 
