@@ -24,6 +24,8 @@ function del(id_del, id_order){
 }
 function done(id){
 	$.get('index.php?page=list-tables&method=done',{id : id }, function(){
+		alert('Gọi món thành công!')  ;
+		location.href = 'index.php?page=list-tables';
 		
 	});
 	

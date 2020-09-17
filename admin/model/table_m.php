@@ -8,7 +8,7 @@ class table_m extends Connect{
         }
         //Hiển thị thông tin bàn ăn
         public function getHoadon(){
-            $sql = "SELECT * FROM tbl_hoadon";
+            $sql = "SELECT * FROM tbl_hoadon,tbl_khachhang where tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang";
 			$pre = $this->pdo->prepare($sql);
 			$pre->execute();
 			return $pre->fetchAll(PDO::FETCH_ASSOC);
@@ -33,7 +33,6 @@ class table_m extends Connect{
 			$pre->bindParam(':ma_loai_ban', $ma_loai_ban);
 	
 		    if($pre->execute()){
-		    	$_SESSION['check'] = 1;
 		    	header('location: index.php?page=list-tables');
 		    }else{
 		     echo "Thêm thất bại";
@@ -66,7 +65,8 @@ class table_m extends Connect{
             if($pre->execute()){
                 unset($_SESSION['cart']);
                 unset($_SESSION['sum']);	
-                header('location: index.php?page=list-tables');
+                // header('location: index.php');
+                
 		    }else{
                 echo "<h1>Saiiiiii!</h1>";
             }
@@ -82,7 +82,7 @@ class table_m extends Connect{
             if($pre->execute()){
                 unset($_SESSION['cart']);
                 unset($_SESSION['sum']);	
-                header('location: index.php?page=list-tables');
+              
 		    }else{
                 echo "Saiiiiii!";
             }
@@ -92,6 +92,14 @@ class table_m extends Connect{
             $sql = "SELECT ma_thuc_don,so_luong FROM tbl_chitietban WHERE ma_hoa_don = :ma_hoa_don";
             $pre= $this->pdo->prepare($sql);
             $pre->bindParam(':ma_hoa_don', $ma_hoa_don);
+            $pre->execute();
+            return $pre->fetchAll(PDO::FETCH_ASSOC);
+        }
+        //Tìm kiếm thông tin
+        public function search($key){
+            $sql="SELECT *FROM tbl_khachhang,tbl_hoadon WHERE tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang AND tbl_khachhang.so_dien_thoai LIKE '%$key%'";
+            $pre=$this->pdo->prepare($sql);
+            $pre->bindParam(':key', $key);
             $pre->execute();
             return $pre->fetchAll(PDO::FETCH_ASSOC);
         }

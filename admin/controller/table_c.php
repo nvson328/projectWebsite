@@ -19,9 +19,6 @@
 					if (isset($_GET['id'])) {
 						$id = $_GET['id'];
 						$rsCheck = $this->table->checkFood($id);
-						echo "<pre>";
-		                print_r($rsCheck);
-						echo '</pre>';
 						if(count($rsCheck) < 1){
 							foreach($_SESSION['cart'] as $key => $value){
 								$ma_thuc_don = $value['ma_thuc_don'];
@@ -61,7 +58,6 @@
 						unset($_SESSION['cart'][$id_del]);
 					}
 		     		
-	                
 	                if (isset($_GET['id_food'])) {
 	                	$id_food = $_GET['id_food'];
 	                	$qty = $_GET['qty'];
@@ -93,11 +89,25 @@
 						
 					}
 					include_once 'views/table/details-table.php';
-            	default:
+				default:
+				if(isset($_POST['submit_search'])){
+					if(isset($_POST['key'])){
+					$key = $_POST['key'];
+					$rsSearch = $this->table->search($key);
+					// $count= count($rsSearch);
+					// echo "<pre>";
+					// print_r($rsSearch);
+					// echo "</pre>";
+					$rsBill= $this->table->getHoadon();
+					include_once 'views/table/search.php';
+					}
+				}
+				else{
 					$rsBill= $this->table->getHoadon();
 					$_SESSION['rsBill']= $rsBill;
             		include_once 'views/table/list-tables.php';
-            		break;
+					break;
+				}
             }
         }
 		

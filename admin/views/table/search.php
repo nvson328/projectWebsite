@@ -31,7 +31,7 @@
                                 <tbody>
                                     <?php                             
                                 $stt=0;
-                                foreach($rsBill as $key => $value){
+                                foreach($rsSearch as $key => $value){
                                    $stt++;
    
                                 ?>

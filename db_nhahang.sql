@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 07, 2020 lúc 08:42 AM
+-- Thời gian đã tạo: Th9 10, 2020 lúc 04:08 PM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.6
 
@@ -191,7 +191,15 @@ INSERT INTO `tbl_hoadon` (`ma_hoa_don`, `ma_khach_hang`, `ma_ban`, `ngay_dat_ban
 (25, 33, 6, '2020-09-04', '10:37:00', '', 1),
 (26, 34, 24, '2020-09-04', '10:48:00', '', 1),
 (27, 35, 1, '2020-09-11', '07:30:00', '', 1),
-(28, 35, 24, '2020-09-17', '07:30:00', '', 1);
+(28, 35, 24, '2020-09-17', '07:30:00', '', 1),
+(29, 2, 10, '2020-10-08', '01:52:00', '', 1),
+(30, 36, 5, '2020-09-16', '01:56:00', '', 1),
+(31, 37, 6, '2020-09-16', '07:00:00', '', 1),
+(32, 38, 2, '2020-09-09', '07:28:00', '', 1),
+(33, 39, 2, '2020-09-10', '07:02:00', '', 1),
+(34, 40, 1, '2020-09-10', '07:04:00', '', 1),
+(35, 41, 1, '2020-09-10', '07:05:00', '', 1),
+(36, 42, 2, '2020-09-10', '07:53:00', '', 1);
 
 -- --------------------------------------------------------
 
@@ -246,7 +254,14 @@ INSERT INTO `tbl_khachhang` (`ma_khach_hang`, `ten_khach_hang`, `so_dien_thoai`,
 (32, 'Vũ Tùng', '0972853498', 'luasinh@gmail.com', 1),
 (33, 'Giàng thị Nở', '0972853475', 'thino@gmail.com', 1),
 (34, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
-(35, 'Đoàn quỳnh anh', '0862592140', 'quynhanh@gamil.com', 1);
+(35, 'Đoàn quỳnh anh', '0862592140', 'quynhanh@gamil.com', 1),
+(36, 'Nam phạm', '5+45652612', 'phamdangnam@gmail.com', 1),
+(37, 'Nguyễn Thùy Linh', '0988851491', 'thuylinh@gmail.com', 1),
+(38, 'Vũ Tùng', '0988851491', 'vuxtit1210@gmail.com', 1),
+(39, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(40, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(41, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(42, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -329,34 +344,6 @@ INSERT INTO `tbl_thucdon` (`ma_thuc_don`, `ma_danh_muc`, `ten_mon_an`, `anh_chi_
 (48, 2, 'Steak bò', 'special-menu-4.jpg', 'Beefsteak chắc hẳn đã quá quen thuộc với người Việt Nam ta nhưng liệu bạn có muốn thử beefsteak chuẩn vị New York', '300000', 2),
 (49, 2, 'Spaghetti', 'special-menu-5.jpg', 'Mì Ý sốt bò băm hay còn gọi là Spaghetti, là món ăn ngon và phổ biến, dùng kèm với hỗn hợp sốt cà chua và thịt bò bằm có nguồn gốc từ Italia.', '150000', 2);
 
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `tbl_thuvien`
---
-
-CREATE TABLE `tbl_thuvien` (
-  `ma_anh` int(10) NOT NULL,
-  `anh_gioi_thieu` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `tbl_thuvien`
---
-
-INSERT INTO `tbl_thuvien` (`ma_anh`, `anh_gioi_thieu`, `status`) VALUES
-(1, 'gallery_01.jpg', 1),
-(2, 'gallery_02.jpg', 1),
-(3, 'gallery_03.jpg', 1),
-(4, 'gallery_04.jpg', 1),
-(5, 'gallery_05.jpg', 1),
-(6, 'gallery_06.jpg', 1),
-(7, 'gallery_07.jpg', 1),
-(8, 'gallery_08.jpg', 1),
-(9, 'gallery_09.jpg', 1),
-(10, 'gallery_10.jpg', 1);
-
 --
 -- Chỉ mục cho các bảng đã đổ
 --
@@ -421,12 +408,6 @@ ALTER TABLE `tbl_thucdon`
   ADD KEY `fk_ma_danh_muc_tbl_danhmuc_tbl_thucdon` (`ma_danh_muc`);
 
 --
--- Chỉ mục cho bảng `tbl_thuvien`
---
-ALTER TABLE `tbl_thuvien`
-  ADD PRIMARY KEY (`ma_anh`);
-
---
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -452,13 +433,13 @@ ALTER TABLE `tbl_daubep`
 -- AUTO_INCREMENT cho bảng `tbl_hoadon`
 --
 ALTER TABLE `tbl_hoadon`
-  MODIFY `ma_hoa_don` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `ma_hoa_don` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khachhang`
 --
 ALTER TABLE `tbl_khachhang`
-  MODIFY `ma_khach_hang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `ma_khach_hang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_loaiban`
@@ -477,12 +458,6 @@ ALTER TABLE `tbl_taikhoan`
 --
 ALTER TABLE `tbl_thucdon`
   MODIFY `ma_thuc_don` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
-
---
--- AUTO_INCREMENT cho bảng `tbl_thuvien`
---
-ALTER TABLE `tbl_thuvien`
-  MODIFY `ma_anh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
