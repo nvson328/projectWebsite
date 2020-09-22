@@ -39,7 +39,7 @@
 				// 	}
 				// 	break;
 				default:
-					$rs_food= $this->food->getFood();
+					$rs_food= $this->food->getFood_page();
             		include_once 'views/food/list-foods.php';
             		break;
             }

@@ -98,12 +98,12 @@
 					// echo "<pre>";
 					// print_r($rsSearch);
 					// echo "</pre>";
-					$rsBill= $this->table->getHoadon();
+					$rsBill= $this->table->getHoadon_page();
 					include_once 'views/table/search.php';
 					}
 				}
 				else{
-					$rsBill= $this->table->getHoadon();
+					$rsBill= $this->table->getHoadon_page();
 					$_SESSION['rsBill']= $rsBill;
             		include_once 'views/table/list-tables.php';
 					break;

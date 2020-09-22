@@ -56,8 +56,9 @@
                                     <?php 
                                     }?>   
                                 </tbody>
-                                    
+                                  
                             </table>
+                            <a href="index.php?page=list-tables&method=list">Quay lại</a>  
                         </div>
                     </div>
                 <!-- /.row -->

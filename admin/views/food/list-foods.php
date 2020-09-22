@@ -38,6 +38,27 @@
 				}
 				?>
 			</table>
+			<!--Phan trang -->
+			<div style="text-align: center;">
+                        <ul class="pagination">
+                            
+                            <?php
+                                $page_f = $this->food->getFood();
+                                $food_count = count($page_f);
+                                $food_page = ceil($food_count/5);
+                                // echo $bill_count.',,';
+                                // echo $bill_page.',,';
+                                
+                                for($i=1;$i<= $food_page;$i++){
+                                    // echo '<a style="margin:0 5px;" href="index.php?page=list-tables&method=list&trang='.$i.'">'.$i.'</a>';
+                                    echo '<li class="page-item"><a class="page-link" href="index.php?page=list-foods&method=list&trang='.$i.'">'.$i.'</a></li>';
+        
+                                }
+                            
+                            ?>
+                            
+                            </ul>
+                        </div>
 		</div>
 		</form>
 	</div>

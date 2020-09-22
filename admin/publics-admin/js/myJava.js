@@ -1,5 +1,6 @@
-$(document).ready(function(){
 
+$(document).ready(function(){
+	
 });
 
 function addOrders(id_food, id_order){
@@ -30,6 +31,7 @@ function done(id){
 	});
 	
 }
+
 // function del(id_delFood){
 // 	var id_delFood = $('#btn_delFood_' + id_delFood).val();
 // 	$.get('index.php?page=list-foods&method=list',{id_delFood : id_delFood}, function(){

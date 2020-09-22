@@ -8,7 +8,32 @@ class table_m extends Connect{
         }
         //Hiển thị thông tin bàn ăn
         public function getHoadon(){
+            // $sp_page=5;
+            // if(!isset($_GET['trang'])){
+            //     $trang= 1;
+            // }
+            // else{
+            //     $trang = $_GET['trang'];
+            // }
+            // $on_page = ($trang - 1)*$sp_page;
+            // $sql = "SELECT * FROM tbl_hoadon,tbl_khachhang where tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang limit $on_page,$sp_page";
             $sql = "SELECT * FROM tbl_hoadon,tbl_khachhang where tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang";
+			$pre = $this->pdo->prepare($sql);
+			$pre->execute();
+			return $pre->fetchAll(PDO::FETCH_ASSOC);
+        }
+        public function getHoadon_page(){
+            $sp_page=5;
+            if(!isset($_GET['trang'])){
+                $trang= 1;
+                
+                
+            }
+            else{
+                $trang=$_GET['trang'];
+            }
+            $on_page=($trang-1)*$sp_page;
+            $sql = "SELECT * FROM tbl_hoadon,tbl_khachhang where tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang limit $on_page,$sp_page";
 			$pre = $this->pdo->prepare($sql);
 			$pre->execute();
 			return $pre->fetchAll(PDO::FETCH_ASSOC);

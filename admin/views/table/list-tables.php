@@ -1,3 +1,5 @@
+
+
 <?php include_once 'views/table/details-table.php' ?>
 <div class="container-fluid">
     <div class="row">
@@ -10,7 +12,7 @@
                     <div class="col-lg-12"> 
                         <h2>Gọi món</h2>
                         <div class="table-responsive">
-                            <table class="table table-bordered table-hover">
+                            <table id="table_order" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th style="text-align:center;padding-top:15px;">Mã hóa đơn</th>
@@ -59,7 +61,30 @@
                                     
                             </table>
                         </div>
+                    <!--Phan trang -->
+                        <div style="text-align: center;">
+                        <ul class="pagination">
+                            
+                            <?php
+                                $bill = $this->table->getHoadon();
+                                $bill_count = count($bill);
+                                $bill_page = ceil($bill_count/5);
+                                // echo $bill_count.',,';
+                                // echo $bill_page.',,';
+                                
+                                for($i=1;$i<= $bill_page;$i++){
+                                    // echo '<a style="margin:0 5px;" href="index.php?page=list-tables&method=list&trang='.$i.'">'.$i.'</a>';
+                                    echo '<li class="page-item"><a class="page-link" href="index.php?page=list-tables&method=list&trang='.$i.'">'.$i.'</a></li>';
+        
+                                }
+                            
+                            ?>
+                            
+                            </ul>
+                        </div>
                     </div>
+                </div>
+                    
                 <!-- /.row -->
 
             </div>
