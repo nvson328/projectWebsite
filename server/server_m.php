@@ -43,7 +43,8 @@
         $pre->bindParam(':ngay_dat_ban', $ngay_dat_ban);
         $pre->bindParam(':gio_dat_ban', $gio_dat_ban);
         
-        return $pre->execute();
+        $pre->execute();
+        $_SESSION['id_hoadon'] = $this->pdo->lastInsertId();
     }
 
     public function getma_ban_an($id) {
@@ -72,6 +73,28 @@
         $pre->bindParam(':phone', $phone, PDO::PARAM_STR);
         $pre->execute();
         return $pre->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Chi tiết hóa đơn dựa vào ID.
+    public function getBill_Id($id)
+    {
+        $sql = "
+            SELECT 
+                tbl_hoadon.ngay_dat_ban, tbl_hoadon.gio_dat_ban,
+                tbl_khachhang.ten_khach_hang,tbl_khachhang.email,tbl_banan.ten_ban
+            FROM 
+                tbl_hoadon,tbl_khachhang,tbl_banan
+            WHERE 
+                tbl_khachhang.ma_khach_hang = tbl_hoadon.ma_khach_hang
+            AND
+                tbl_banan.ma_ban = tbl_hoadon.ma_ban
+            AND
+                tbl_hoadon.ma_hoa_don = :id";
+
+            $pre = $this->pdo->prepare($sql);
+            $pre->bindParam(':id', $id, PDO::PARAM_INT);
+            $pre->execute();
+            return $pre->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }

@@ -32,5 +32,9 @@ class home_c extends home_m {
 				break;
 		}
 	}
+
+	public function sentmail() {
+		include_once 'views/sentmail.php';
+	}
 }
 ?>

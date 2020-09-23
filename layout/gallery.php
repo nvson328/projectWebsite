@@ -6,7 +6,7 @@
                         <h2 class="block-title text-center">
 						Our Gallery	
 					</h2>
-                        <p class="title-caption text-center">There are many variations of passages of Lorem Ipsum available </p>
+                        <p class="title-caption text-center"></p>
                     </div>
                     <div class="gal-container clearfix">
                         <div class="col-md-8 col-sm-12 co-xs-12 gal-item">

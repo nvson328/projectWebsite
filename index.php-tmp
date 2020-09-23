@@ -1,9 +1,8 @@
-<?php  
-    
-    session_start();
+<?php
+
+session_start();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +24,7 @@
     <!-- Site Icons -->
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Site CSS -->
@@ -49,39 +48,39 @@
         <div id="status"></div>
     </div>
     <!-- Notify -->
-    <?php include_once 'layout/noti/successMember.php' ?>
-    <!-- ./Notify -->
-    <?php include_once'layout/header.php'; ?>
-	<!-- end site-header -->
-	
-    <?php include_once 'layout/banner.php'; ?>
-    <!-- end banner -->
-    <?php include_once 'layout/about.php' ?>
+<?php include_once 'layout/noti/successMember.php'?>
+<!-- ./Notify -->
+<?php include_once 'layout/header.php';?>
+<!-- end site-header -->
+
+<?php include_once 'layout/banner.php';?>
+<!-- end banner -->
+<?php include_once 'layout/about.php'?>
     <?php
-     if (isset($_GET['page'])){
-            $page = $_GET['page'];
-        }else{
-            $page = 'home';
-        }
+if (isset($_GET['page'])) {
+	$page = $_GET['page'];
+} else {
+	$page = 'home';
+}
 
-        switch ($page) {  
-            case 'sentmail':
-                include_once'controller/home_c.php';
-                $home = new home_c();
-                $home->sentmail();
-                break;
+switch ($page) {
+	case 'sentmail':
+		include_once 'controller/home_c.php';
+		$home = new home_c();
+		$home->sentmail();
+		break;
 
-            default:
-                include_once 'controller/home_c.php';
-                $home = new home_c();
-                $home->home();
-                break;
-        }
-    ?>
-    <div id="footer" class="footer-main">
-
-        <!-- end footer-news -->
-        <?php include_once'layout/footer.php'; ?>
+	default:
+		include_once 'controller/home_c.php';
+		$home = new home_c();
+		$home->home();
+		break;
+}
+?>
+<div id="footer" class="footer-main">
+<?php include_once "layout/footer-main.php"?>
+<!-- end footer-news -->
+<?php include_once 'layout/footer.php';?>
         <!-- end footer-box -->
     </div>
     <!-- end footer-main -->
@@ -98,7 +97,7 @@
     <!-- ajax -->
     <script src="js/ajax.js"></script>
     <!--myJS-->
-    
+
 </body>
 
 </html>

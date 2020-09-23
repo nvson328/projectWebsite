@@ -41,3 +41,21 @@
     z-index: 99;
     display: none; 
 }
+
+.single:hover {
+    border-color: #e75b1e;
+}
+
+.single {
+    border: 1px solid transparent;
+    transition: unset;
+}
+
+.single > label {
+    cursor: pointer;
+
+}
+
+.single.active {
+    border-color: #e75b1e;
+}

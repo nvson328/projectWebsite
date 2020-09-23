@@ -1,6 +1,13 @@
 $(document).ready(function(){
     "use strict";
 
+
+    // chon ban an.
+
+    $(document).on('click', '.single', function() {
+        $(this).addClass('active');
+    });
+
     /*------------------------------
     	Loại bàn ăn.
     -------------------------------*/
@@ -21,9 +28,10 @@ $(document).ready(function(){
     		$.each(data,function(index, el) {
     			result += `<div class="col-lg-4">
                         <div class="single">
-                            <label>
+                            <label class="div_ban_an">
                                 <img id="img_ban_an" class="select_color" src="images/ban_an.png">
-                                <input type="radio" name="banan" id="radio_ban_an" value="`+ el['ma_ban'] +`">`+ el['ten_ban'] +`
+								<input type="radio" name="banan" id="radio_ban_an" value="`+ el['ma_ban'] +`">`+ el['ten_ban'] +`
+								<span class=""></span>
                             </label> 
                         </div> 
                     </div>`;
@@ -55,9 +63,10 @@ function datban() {
 	var action  = 'datban';
 	
 	$.post('server/server.php', {action: action, name: name, email: email, phone: phone, banan: banan, date: date, time: time}, function(data) {
-		if (data) {
-			$('#noti').slideDown();
-			$('#noti').delay(5000).slideUp();
-		}
+	
+        data = parseInt(data);
+        if (data == 1) {
+            window.location = 'index.php?page=sentmail';
+        }
 	});
 }

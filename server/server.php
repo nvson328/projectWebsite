@@ -51,8 +51,15 @@
 
 		}
 
-		echo 'oke';
+		$id_hoadon = $_SESSION['id_hoadon'];
 
+		$invoiBill = $server->getBill_Id($id_hoadon);
+
+		// lưu mảng này vào mail.
+		if (is_array($invoiBill) && !empty($invoiBill)) {
+			$_SESSION['sentEmail'] = $invoiBill;
+			echo 1;
+		}
 	}
 
 ?>

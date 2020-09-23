@@ -24,3 +24,27 @@ img {
 #cke_up_images{
     width: 500px;
 }
+
+.div_login .img_bg{
+    position: absolute;
+    z-index: -1;
+}
+
+
+.div_login .form-login{
+    margin: 0 auto;
+    padding-top: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    color:  #e75b1e;
+}
+
+.div_login .form-login .img_logo{
+    width: 200px;
+    padding-bottom: 30px;
+}
+
+.div_login .form-login button {
+    background-color: #e75b1e;
+}

@@ -53,6 +53,14 @@
        {
           return $this->server->checkMember($email, $phone);
        }
+
+        // Chi tiết hóa đơn dựa vào ID.
+        
+      // Chi tiết hóa đơn dựa vào ID.
+      public function getBill_Id($id)
+      {
+        return $this->server->getBill_Id($id);
+      }
     }
     
 

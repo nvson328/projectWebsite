@@ -6,7 +6,7 @@
                         <h2 class="block-title text-center">
 						Our Team 	
 					</h2>
-                        <p class="title-caption text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                        <p class="title-caption text-center">Đây là những đầu bếp tuyệt vời với nhiều năm kinh nghiệm sẽ đem lại cho thực khách những trải nghiệm tuyệt vời nhất khi tới nhà hàng của chúng tôi</p>
                     </div>
                     <div class="team-box">
                         <div class="row">

@@ -10,30 +10,20 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div class="footer-box-a">
                                 <h3>About Us</h3>
-                                <p>Aenean commodo ligula eget dolor aenean massa. Cum sociis nat penatibu set magnis dis parturient montes.</p>
+                                <p>Website được vận hành & phát triển bởi nhà hàng FOOD FUNDAY</p>
                                 <ul class="socials-box footer-socials pull-left">
                                     <li>
-                                        <a href="#">
+                                        <a href="https://www.facebook.com/Food-Funday-Restaurant-106817187812168">
                                             <div class="social-circle-border"><i class="fa  fa-facebook"></i></div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <div class="social-circle-border"><i class="fa fa-twitter"></i></div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
+                                        <a href="https://myaccount.google.com/profile">
                                             <div class="social-circle-border"><i class="fa fa-google-plus"></i></div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <div class="social-circle-border"><i class="fa fa-pinterest"></i></div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
+                                        <a href="https://www.instagram.com/foodfunday.thaiha/">
                                             <div class="social-circle-border"><i class="fa fa-linkedin"></i></div>
                                         </a>
                                     </li>
@@ -45,12 +35,11 @@
                         <!-- end col -->
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div class="footer-box-b">
-                                <h3>New Menu</h3>
+                                <h3>Practical experience</h3>
                                 <ul>
-                                    <li><a href="#">Italian Bomba Sandwich</a></li>
-                                    <li><a href="#">Double Dose of Pork Belly</a></li>
-                                    <li><a href="#">Spicy Thai Noodles</a></li>
-                                    <li><a href="#">Triple Truffle Trotters</a></li>
+                                    <li><p>Không gian thoải mái, sang trọng và ấm cúng.</p></li>
+                                    <li><p>Món ăn đa dạng và tuyệt vời.</p></li>
+                                    <li><p>Chất lượng phục vụ xuất sắc.</p></li>
                                 </ul>
                             </div>
                             <!-- end footer-box-b -->
@@ -61,17 +50,13 @@
                                 <h3>Contact Us</h3>
                                 <p>
                                     <i class="fa fa-map-signs" aria-hidden="true"></i>
-                                    <span>6 E Esplanade, St Albans VIC 3021, Australia</span>
+                                    <span>Số 84 đường Thái Hà, quận Đống Đa, Hà Nội</span>
                                 </p>
                                 <p>
                                     <i class="fa fa-mobile" aria-hidden="true"></i>
                                     <span>
-									+91 80005 89080 
+									0968877173
 								</span>
-                                </p>
-                                <p>
-                                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    <span><a href="#">support@foodfunday.com</a></span>
                                 </p>
                             </div>
                             <!-- end footer-box-c -->
@@ -83,12 +68,12 @@
 
                                 <ul>
                                     <li>
-                                        <p>Monday - Thursday </p>
-                                        <span> 11:00 AM - 9:00 PM</span>
+                                        <p>Thứ hai - Thứ năm </p>
+                                        <span> 11:00 AM - 10:00 PM</span>
                                     </li>
                                     <li>
-                                        <p>Friday - Saturday </p>
-                                        <span>  11:00 AM - 5:00 PM</span>
+                                        <p>Thứ sáu - Chủ nhật </p>
+                                        <span>  11:00 AM - 11:30 PM</span>
                                     </li>
                                 </ul>
                             </div>

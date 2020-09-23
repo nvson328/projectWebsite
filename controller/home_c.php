@@ -33,5 +33,10 @@
                    break;
            }
        }
+
+       public function sentmail()
+       {
+         include_once 'views/sentmail.php';
+       }
     }
 ?>
