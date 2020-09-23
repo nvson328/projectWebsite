@@ -19,44 +19,59 @@
 						if (isset($_POST['submit'])) {
 							# code...
 							$ten_mon_an = $_POST['ten_mon_an'];
+							$ma_danh_muc = $_POST['ma_danh_muc'];
 							$gia_tien = $_POST['gia_tien'];
 							$file = $_FILES['anh_chi_tiet'];
-							$maxfileSize = 1000000;
-		
-							$arrnameFile = [];
-							$countFile = count($file['ten_mon_an']);
-							for ($i=0; $i < $countFile; $i++) {
-								$fileName = time().$file['ten_mon_an'][$i]; //lấy thời gian đặt tên file để ko bị trùng 
-		
-								$check = getimagesize($file['tmp_name'][$i]);	
-								if ($check == true && $file['size'][$i] < $maxfileSize) {
-									array_push($arrnameFile, $fileName);
-									move_uploaded_file($file["tmp_name"][$i], "img/".$fileName);
-									$allowUpload = true;
-								}else{
-									$allowUpload = false;
-								}				
-							}
-							if($allowUpload==true){
-								$this->food->addFood($ten_mon_an,$gia_tien,$file);
-								include_once 'views/food/add-foods.php';
-							}
+							$fileName = time().$file['name'];
+							move_uploaded_file($file["tmp_name"], "publics-admin/images/".$fileName);
+							$this->food->addFood($ten_mon_an,$ma_danh_muc,$gia_tien,$fileName);	
+
 						}
+						$rs_food= $this->food->getFood_page();
+						$category = $this->food->category();
+						
+						include_once 'views/food/add-foods.php';
 					break;
-				// case 'del':
-				// 	if(isset($_GET['id'])) {
-				// 		$id = $_GET['id'];
-				// 		$del=$this->food->delFood($id);
-				// 		if($del){
-				// 			header('location:index.php?page=list-foods');
-				// 		}
-				// 		else{
-				// 			echo"lỗi không xóa đc";
-				// 		}
-				// 	}
-				// 	break;
+				case'edit':
+					if(isset($_GET['id'])){
+						$id = $_GET['id'];
+						$rs_getnameFood = $this->food->getnameFood($id);
+						// echo "<pre>";
+						// print_r($rs_getnameFood);
+						// echo "</pre>";
+						$_SESSION['nameFood']=$rs_getnameFood[0]['ten_mon_an'];
+						$_SESSION['category']=$rs_getnameFood[0]['ma_danh_muc'];
+						$_SESSION['price']=$rs_getnameFood[0]['gia_tien'];
+						$_SESSION['price']=$rs_getnameFood[0]['gia_tien'];
+						$fileName_old=$rs_getnameFood[0]['anh_chi_tiet'];
+						if (isset($_POST['btn_edit'])){							
+							$ten_mon_an = $_POST['ten_mon_an'];
+							$ma_danh_muc = $_POST['ma_danh_muc'];
+							$gia_tien = $_POST['gia_tien'];
+							$file = $_FILES['anh_chi_tiet'];
+							$fileName_new = time().$file['name'];
+							if($fileName_new==""){
+								$fileName = $fileName_old;
+							}
+							else{
+								$fileName_new= $fileName_old;
+								$fileName = $fileName_new;
+							}
+
+							move_uploaded_file($file["tmp_name"], "publics-admin/images/".$fileName);
+							$edit=$this->food->editFood($id,$ten_mon_an,$ma_danh_muc,$gia_tien,$fileName);	
+							
+
+						}
+						
+					}
+					$rs_food= $this->food->getFood_page();
+					$category = $this->food->category();
+					include_once 'views/food/edit-foods.php';
+				break;
 				default:
 					$rs_food= $this->food->getFood_page();
+					
             		include_once 'views/food/list-foods.php';
             		break;
             }
