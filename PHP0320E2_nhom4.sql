@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.5deb2
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 10, 2020 lúc 04:08 PM
--- Phiên bản máy phục vụ: 10.4.11-MariaDB
--- Phiên bản PHP: 7.4.6
+-- Máy chủ: localhost:3306
+-- Thời gian đã tạo: Th9 22, 2020 lúc 03:45 AM
+-- Phiên bản máy phục vụ: 5.7.31-0ubuntu0.18.04.1
+-- Phiên bản PHP: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `db_nhahang`
+-- Cơ sở dữ liệu: `PHP0320E2_nhom4`
 --
 
 -- --------------------------------------------------------
@@ -31,7 +32,7 @@ CREATE TABLE `tbl_banan` (
   `ma_ban` int(10) NOT NULL,
   `ma_loai_ban` int(10) NOT NULL,
   `ten_ban` varchar(50) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1
+  `status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -78,7 +79,7 @@ CREATE TABLE `tbl_chitietban` (
   `so_luong` int(10) NOT NULL,
   `giam_gia` int(10) NOT NULL,
   `tong_tien` decimal(10,2) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1
+  `status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -86,12 +87,22 @@ CREATE TABLE `tbl_chitietban` (
 --
 
 INSERT INTO `tbl_chitietban` (`ma_hoa_don`, `ma_thuc_don`, `don_gia`, `so_luong`, `giam_gia`, `tong_tien`, `status`) VALUES
-(1, 25, '30000.00', 1, 0, '30000.00', 1),
-(2, 26, '60000.00', 1, 0, '60000.00', 1),
-(3, 26, '60000.00', 1, 0, '60000.00', 1),
+(1, 25, '30000.00', 5, 0, '150000.00', 1),
+(3, 25, '30000.00', 5, 0, '150000.00', 1),
+(5, 25, '30000.00', 1, 0, '30000.00', 1),
+(29, 25, '30000.00', 2, 0, '60000.00', 1),
+(1, 26, '60000.00', 2, 0, '120000.00', 1),
+(2, 26, '60000.00', 2, 0, '120000.00', 1),
+(3, 26, '60000.00', 2, 0, '120000.00', 1),
+(5, 26, '60000.00', 1, 0, '60000.00', 1),
+(29, 26, '60000.00', 2, 0, '120000.00', 1),
 (1, 27, '80000.00', 1, 0, '80000.00', 1),
+(5, 27, '80000.00', 1, 0, '80000.00', 1),
+(29, 27, '80000.00', 2, 0, '160000.00', 1),
 (2, 28, '180000.00', 1, 0, '180000.00', 1),
+(5, 28, '180000.00', 1, 0, '180000.00', 1),
 (1, 29, '250000.00', 1, 0, '250000.00', 1),
+(1, 30, '200000.00', 1, 0, '200000.00', 1),
 (3, 30, '200000.00', 1, 0, '200000.00', 1),
 (3, 31, '45000.00', 2, 0, '90000.00', 1),
 (1, 34, '30000.00', 3, 0, '90000.00', 1),
@@ -107,7 +118,7 @@ INSERT INTO `tbl_chitietban` (`ma_hoa_don`, `ma_thuc_don`, `don_gia`, `so_luong`
 CREATE TABLE `tbl_danhmuc` (
   `ma_danh_muc` int(10) NOT NULL,
   `ten_danh_muc` varchar(50) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1
+  `status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -131,7 +142,7 @@ CREATE TABLE `tbl_daubep` (
   `ten_dau_bep` varchar(50) NOT NULL,
   `anh_dau_bep` varchar(150) NOT NULL,
   `gioi_thieu` text NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1
+  `status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -156,7 +167,7 @@ CREATE TABLE `tbl_hoadon` (
   `ngay_dat_ban` date NOT NULL,
   `gio_dat_ban` time NOT NULL,
   `ghi_chu` varchar(150) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1
+  `status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -199,7 +210,9 @@ INSERT INTO `tbl_hoadon` (`ma_hoa_don`, `ma_khach_hang`, `ma_ban`, `ngay_dat_ban
 (33, 39, 2, '2020-09-10', '07:02:00', '', 1),
 (34, 40, 1, '2020-09-10', '07:04:00', '', 1),
 (35, 41, 1, '2020-09-10', '07:05:00', '', 1),
-(36, 42, 2, '2020-09-10', '07:53:00', '', 1);
+(36, 42, 2, '2020-09-10', '07:53:00', '', 1),
+(37, 43, 24, '2020-09-17', '04:28:00', '', 1),
+(38, 44, 24, '2020-09-17', '04:28:00', '', 1);
 
 -- --------------------------------------------------------
 
@@ -212,7 +225,7 @@ CREATE TABLE `tbl_khachhang` (
   `ten_khach_hang` varchar(50) NOT NULL,
   `so_dien_thoai` varchar(10) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1
+  `status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -261,7 +274,10 @@ INSERT INTO `tbl_khachhang` (`ma_khach_hang`, `ten_khach_hang`, `so_dien_thoai`,
 (39, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
 (40, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
 (41, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
-(42, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1);
+(42, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(43, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(44, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1),
+(45, 'Vũ Tùng', '0986384632', 'vuxtit1210@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -272,7 +288,7 @@ INSERT INTO `tbl_khachhang` (`ma_khach_hang`, `ten_khach_hang`, `so_dien_thoai`,
 CREATE TABLE `tbl_loaiban` (
   `ma_loai_ban` int(10) NOT NULL,
   `ten_loai_ban` varchar(50) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1
+  `status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -294,7 +310,7 @@ CREATE TABLE `tbl_taikhoan` (
   `ma_tai_khoan` int(10) NOT NULL,
   `ten_dang_nhap` varchar(50) NOT NULL,
   `mat_khau` varchar(50) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1
+  `status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -318,7 +334,7 @@ CREATE TABLE `tbl_thucdon` (
   `anh_chi_tiet` varchar(150) NOT NULL,
   `gioi_thieu` text NOT NULL,
   `gia_tien` decimal(10,0) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1
+  `status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -433,13 +449,13 @@ ALTER TABLE `tbl_daubep`
 -- AUTO_INCREMENT cho bảng `tbl_hoadon`
 --
 ALTER TABLE `tbl_hoadon`
-  MODIFY `ma_hoa_don` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `ma_hoa_don` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khachhang`
 --
 ALTER TABLE `tbl_khachhang`
-  MODIFY `ma_khach_hang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `ma_khach_hang` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_loaiban`

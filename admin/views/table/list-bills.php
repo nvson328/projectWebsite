@@ -1,6 +1,6 @@
 
 
-<?php include_once 'views/table/details-table.php' ?>
+<?php include_once 'views/table/detail-bills.php' ?>
 <div class="container-fluid">
     <div class="row">
         <form class="form-inline" method="post">
@@ -10,7 +10,7 @@
     </div>
                 <div class="row">
                     <div class="col-lg-12"> 
-                        <h2>Gọi món</h2>
+                        <h2>Quản lý hóa đơn</h2>
                         <div class="table-responsive">
                             <table id="table_order" class="table table-bordered table-hover">
                                 <thead>
@@ -25,6 +25,11 @@
 
                                     </tr>
                                 </thead>
+                              <!-- <?php echo '<pre>';
+                                print_r($_SESSION['order']);
+                                echo '</pre>';?>  
+
+                                 -->
                                 <tbody>
                                     <?php                             
                                 $stt=0;
@@ -43,11 +48,9 @@
                                         
                                         <td style="text-align:center;padding-top:15px;">
                                            
-                                                <button class="btn btn-danger" onclick="detailsBill(<?= $value['ma_hoa_don']?>)" id="btn_details_<?= $value['ma_hoa_don']?>" value="<?= $value['ma_hoa_don']?>" data-toggle="modal" data-target="#modal-detail" name="details-table">Chi tiết</button>
+                                                <button class="btn btn-danger" onclick="bills(<?= $value['ma_hoa_don']?>)" id="btn_detailsBill_<?= $value['ma_hoa_don']?>" value="<?= $value['ma_hoa_don']?>" data-toggle="modal" data-target="#modal-detail" name="details-bills">Chi tiết</button>
                                          
-                                            <a href="index.php?page=list-tables&method=order&id=<?= $value['ma_hoa_don'] ?>">
-                                                <button  class="btn btn-primary" name="order_food" >Gọi món</button>
-                                            </a>
+                                          
                                         </td>
                                     </tr>  
                                     <?php 
@@ -57,7 +60,7 @@
                             </table>
                         </div>
                     <!--Phan trang -->
-                        <div style="text-align: center;">
+                        <!-- <div style="text-align: center;">
                         <ul class="pagination">
                             
                             <?php
@@ -76,7 +79,7 @@
                             ?>
                             
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                     

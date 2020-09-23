@@ -8,32 +8,24 @@ class table_m extends Connect{
         }
         //Hiển thị thông tin bàn ăn
         public function getHoadon(){
-            // $sp_page=5;
-            // if(!isset($_GET['trang'])){
-            //     $trang= 1;
-            // }
-            // else{
-            //     $trang = $_GET['trang'];
-            // }
-            // $on_page = ($trang - 1)*$sp_page;
-            // $sql = "SELECT * FROM tbl_hoadon,tbl_khachhang where tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang limit $on_page,$sp_page";
-            $sql = "SELECT * FROM tbl_hoadon,tbl_khachhang where tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang";
+            
+            $sql = "SELECT * FROM tbl_hoadon,tbl_khachhang where tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang ";
 			$pre = $this->pdo->prepare($sql);
 			$pre->execute();
 			return $pre->fetchAll(PDO::FETCH_ASSOC);
         }
+        //Show hoa don
         public function getHoadon_page(){
             $sp_page=5;
             if(!isset($_GET['trang'])){
                 $trang= 1;
-                
-                
+
             }
             else{
                 $trang=$_GET['trang'];
             }
             $on_page=($trang-1)*$sp_page;
-            $sql = "SELECT * FROM tbl_hoadon,tbl_khachhang where tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang limit $on_page,$sp_page";
+            $sql = "SELECT * FROM tbl_hoadon,tbl_khachhang where tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang and tbl_hoadon.status_hoa_don =1 order by ma_hoa_don desc limit $on_page,$sp_page";
 			$pre = $this->pdo->prepare($sql);
 			$pre->execute();
 			return $pre->fetchAll(PDO::FETCH_ASSOC);
@@ -73,7 +65,7 @@ class table_m extends Connect{
         }
         //Lấy chi tiết bàn ăn
         public function getDetailsTable($id){
-            $sql= "SELECT * FROM tbl_chitietban,tbl_thucdon WHERE tbl_chitietban.ma_thuc_don=tbl_thucdon.ma_thuc_don AND ma_hoa_don = $id";
+            $sql= "SELECT * FROM tbl_chitietban,tbl_thucdon,tbl_hoadon WHERE tbl_chitietban.ma_hoa_don=tbl_hoadon.ma_hoa_don and tbl_chitietban.ma_thuc_don=tbl_thucdon.ma_thuc_don AND tbl_hoadon.ma_hoa_don = $id";
             $pre = $this->pdo->prepare($sql);
             $pre->execute();
             return $pre->fetchAll(PDO::FETCH_ASSOC);
@@ -114,7 +106,7 @@ class table_m extends Connect{
         }
         //Kiểm tra
         public function checkFood($ma_hoa_don){
-            $sql = "SELECT ma_thuc_don,so_luong FROM tbl_chitietban WHERE ma_hoa_don = :ma_hoa_don";
+            $sql = "SELECT ma_thuc_don,so_luong FROM tbl_chitietban WHERE ma_hoa_don = :ma_hoa_don on";
             $pre= $this->pdo->prepare($sql);
             $pre->bindParam(':ma_hoa_don', $ma_hoa_don);
             $pre->execute();
@@ -127,6 +119,14 @@ class table_m extends Connect{
             $pre->bindParam(':key', $key);
             $pre->execute();
             return $pre->fetchAll(PDO::FETCH_ASSOC);
+        }
+        public function thanhtoan($ma_hoa_don){
+            $sql = "UPDATE tbl_hoadon SET status_hoa_don=2 where ma_hoa_don= :ma_hoa_don";
+            $pre = $this->pdo->prepare($sql);
+            $pre->bindParam(':ma_hoa_don', $ma_hoa_don);
+            if($pre->execute()){
+                unset($_SESSION['id_order']);
+            }
         }
 }
 

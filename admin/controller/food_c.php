@@ -15,16 +15,33 @@
 			}
             
             switch ($method) {
-				case 'add':
-					if(isset($_POST['sm_add'])){
-						$file = $_FILES['avatar'];
-						echo '<pre>';
-						print_r($file);
-						echo '</pre>';
-
-						// $filename = $file[]
-					}
-					include_once 'views/food/add-foods.php';
+				case'add':
+						if (isset($_POST['submit'])) {
+							# code...
+							$ten_mon_an = $_POST['ten_mon_an'];
+							$gia_tien = $_POST['gia_tien'];
+							$file = $_FILES['anh_chi_tiet'];
+							$maxfileSize = 1000000;
+		
+							$arrnameFile = [];
+							$countFile = count($file['ten_mon_an']);
+							for ($i=0; $i < $countFile; $i++) {
+								$fileName = time().$file['ten_mon_an'][$i]; //lấy thời gian đặt tên file để ko bị trùng 
+		
+								$check = getimagesize($file['tmp_name'][$i]);	
+								if ($check == true && $file['size'][$i] < $maxfileSize) {
+									array_push($arrnameFile, $fileName);
+									move_uploaded_file($file["tmp_name"][$i], "img/".$fileName);
+									$allowUpload = true;
+								}else{
+									$allowUpload = false;
+								}				
+							}
+							if($allowUpload==true){
+								$this->food->addFood($ten_mon_an,$gia_tien,$file);
+								include_once 'views/food/add-foods.php';
+							}
+						}
 					break;
 				// case 'del':
 				// 	if(isset($_GET['id'])) {

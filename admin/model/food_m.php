@@ -34,6 +34,15 @@ class food_m extends Connect{
         //   $pre->execute();
             
         // }
+        public function addFood($ten_mon_an,$gia_tien,$anh_chi_tiet){
+          $sql = "INSERT INTO tbl_thucdon (ten_mon_an, anh_chi_tiet,gia_tien) VALUES (:ten_mon_an,:gia_tien,:anh_chi_tiet)";
+          $pre = $this->pdo->prepare($sql);
+          $pre->bindParam(':ten_mon_an', $ten_mon_an);
+          $pre->bindParam(':gia_tien', $gia_tien);
+          $pre->bindParam(':anh_chi_tiet', $anh_chi_tiet);
+          $pre->execute();
+          return $pre->fetchAll(PDO::FETCH_ASSOC);
+        }
 }
 
 ?>

@@ -1,24 +1,22 @@
 
-<style>
-#cke_up_images{
-	width: 500px;
-}
-#price_f{
-	width: 100px;
-}
-</style>
-<form action="upload.php" method="post" enctype="multipart/form-data">
-	<div class="form-group">
-		<label for="">Tên món ăn<span style="color: red;">*</span></label>
-		<input type="text"><br>
-		<label for="">Ảnh</label>
-		<input type="file" name="upload_file">
-		<label for="">Giá tiền<span style="color: red;">*</span></label>
-		<input type="number" id="price_f">
-		<button type="submit" name="sm_add">Thêm mới</button>
 
-	</div>
-<script>
-	// CKEDITOR.replace('up_images');
-</script>
-</form>	
+				<form action="" method="POST" role="form" enctype="multipart/form-data" >
+					<legend>Thêm món ăn mới</legend>
+				
+					<div class="form-group">
+						<label for="">Tên món ăn</label>
+						<input type="text" name="ten_mon_an" require class="form-control" id="" placeholder="Nhập tên món ăn...">
+					</div>
+					<div class="form-group">
+						<label for="">Giá tiền</label>
+						<input type="number" name="gia_tien" class="form-control" id="" placeholder="">
+					</div>
+					
+					<div class="form-group">
+						<label for="">Ảnh món ăn</label>
+						<input type="file" name="anh_chi_tiet" multiple="" class="form-control" id="">
+					</div>
+					
+					<button type="submit" name="submit"  class="btn btn-primary">Thêm mới</button>
+				</form>		
+		

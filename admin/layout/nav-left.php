@@ -1,6 +1,6 @@
 <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
+                    <li class="">
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Trang chủ</a>
                     </li>
 
@@ -17,7 +17,7 @@
                         <a href="index.php?page=add-tables&method=add">Thêm bàn ăn</a> 
                     </li>
                     <li>
-                        <a href="index.php?page=add-tables&method=list">Quản lý hóa đơn</a> 
+                        <a href="index.php?page=list-tables&method=bills">Quản lý hóa đơn</a> 
                     </li>
                 </ul>
             </div>

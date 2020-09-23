@@ -86,9 +86,39 @@
 						$id_bill=$_GET['id_order'];
 						$rsDetails= $this->table->getDetailsTable($id_bill);
 						$_SESSION['rsDetails'] = $rsDetails;
-						
+						$_SESSION['id_order'] = $id_bill;
 					}
+					
 					include_once 'views/table/details-table.php';
+				break;
+				case 'pay':
+					if(isset($_SESSION['id_order'])){
+						$this->table->thanhtoan($_SESSION['id_order']);	
+					}
+				break;
+				case 'bills':
+					if(isset($_GET['id_order'])){
+						$id_bill=$_GET['id_order'];
+						$rsDetails= $this->table->getDetailsTable($id_bill);
+						$_SESSION['rsDetails'] = $rsDetails;
+						$_SESSION['id_order'] = $id_bill;
+					}
+					$rsBill= $this->table->getHoadon();
+					$_SESSION['rsBill']= $rsBill;
+					include_once 'views/table/list-bills.php';
+				break;
+				case 'details-bills':
+					if(isset($_GET['id_bill'])){
+						$id_bill=$_GET['id_bill'];
+						$rsDetails= $this->table->getDetailsTable($id_bill);
+						$_SESSION['rsDetails'] = $rsDetails;
+						echo "<pre>";
+						print_r($_SESSION['rsDetails']);
+						echo "</pre>";
+					}
+					
+					include_once 'views/table/detail-bills.php';
+				break;
 				default:
 				if(isset($_POST['submit_search'])){
 					if(isset($_POST['key'])){
