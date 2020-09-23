@@ -29,7 +29,7 @@
 				      <td><img style="width:80px; height:80px;" src="publics-admin/images/<?= $value['anh_chi_tiet'] ?>" alt=""></td>
 				      <td style='padding-top: 40px; font-size: 20px;'><?= number_format($value['gia_tien']).'<sup>đ</sup>'; ?></td>
 					  <td style="position: relative;">
-							<a href="index.php?page=list-foods&method=del&id=<?= $value['ma_thuc_don']?>">
+							<a href="index.php?page=list-foods&method=edit&id=<?= $value['ma_thuc_don']?>">
 								<i title="Sửa" class="fas fa-wrench" style="position:absolute; top:40px; left:40px;" name="edit_food"></i>
 							</a>
 					  </td>

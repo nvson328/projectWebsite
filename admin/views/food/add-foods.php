@@ -1,11 +1,19 @@
-
-
 				<form action="" method="POST" role="form" enctype="multipart/form-data" >
 					<legend>Thêm món ăn mới</legend>
 				
 					<div class="form-group">
 						<label for="">Tên món ăn</label>
 						<input type="text" name="ten_mon_an" require class="form-control" id="" placeholder="Nhập tên món ăn...">
+					</div>
+					<div class="form-group">
+						<label for="">Mã danh mục</label>
+						<select name="ma_danh_muc" id="">
+                                    <?php
+                                        foreach ($category as $key => $value){
+                                    ?>
+                                    <option value="<?php echo $value['ma_danh_muc'] ?>"><?php echo $value['ten_danh_muc'] ?></option>
+                                        <?php } ?>
+                                </select>
 					</div>
 					<div class="form-group">
 						<label for="">Giá tiền</label>
