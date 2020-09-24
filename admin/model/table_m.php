@@ -128,6 +128,27 @@ class table_m extends Connect{
                 unset($_SESSION['id_order']);
             }
         }
+        public function showBill(){
+            $sql = "select *from tbl_hoadon,tbl_khachhang where tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang and status_hoa_don=2";
+            $pre = $this->pdo->prepare($sql);
+            $pre->execute();
+            return $pre->fetchAll(PDO::FETCH_ASSOC);
+        }
+        public function countBill()
+        {
+            $sql = "SELECT COUNT(*) as COUNT FROM tbl_hoadon WHERE status_hoa_don = 2";
+            $pre = $this->pdo->prepare($sql);
+            $pre->execute();
+            return $pre->fetchAll(PDO::FETCH_ASSOC);
+        }
+        public function countTable()
+        {
+            $sql = "SELECT COUNT(*) AS count FROM tbl_hoadon";
+            $pre = $this->pdo->prepare($sql);
+            $pre->execute();
+            return $pre->fetchAll(PDO::FETCH_ASSOC);
+        }
+        
 }
 
 ?>

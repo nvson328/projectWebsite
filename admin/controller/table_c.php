@@ -70,7 +70,8 @@
 	                // print_r($_SESSION['cart']);
 	                // echo '</pre>';
             		// $rsTables = $this->table->getTables();
-            		$rs_food = $this->table->getFood();
+					$rs_food = $this->table->getFood();
+					$_SESSION['num_food']=$rs_food;
             		include_once 'views/table/order.php';
 					break;
 				case 'add':
@@ -103,8 +104,9 @@
 						$_SESSION['rsDetails'] = $rsDetails;
 						$_SESSION['id_order'] = $id_bill;
 					}
-					$rsBill= $this->table->getHoadon();
-					$_SESSION['rsBill']= $rsBill;
+					$rslistBill= $this->table->showBill();
+					$_SESSION['rslistBill']= $rslistBill;
+					
 					include_once 'views/table/list-bills.php';
 				break;
 				case 'details-bills':
@@ -133,8 +135,13 @@
 					}
 				}
 				else{
-					$rsBill= $this->table->getHoadon_page();
+					$rsBill= $this->table->getHoadon_page();	
 					$_SESSION['rsBill']= $rsBill;
+					$count_table= $this->table->countTable();
+					$_SESSION['count_table']=$count_table;
+					$count_bill= $this->table->countBill();
+					$_SESSION['count_bill']=$count_bill;
+					
             		include_once 'views/table/list-tables.php';
 					break;
 				}

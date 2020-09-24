@@ -5,12 +5,13 @@
     <div class="row">
         <form class="form-inline" method="post">
             <input type="number"  name="key" class="form-control mb-2 mr-sm-2" placeholder="Nhập số điện thoại" value="<?php if(isset($_POST['key'])){ echo $_POST['key'] ; } ?>">
-        <button type="submit" name="submit_search" class="btn btn-primary mb-2">Tìm kiếm</button>
+            <button type="submit" name="submit_search" class="btn btn-primary mb-2">Tìm kiếm</button>
         </form>
     </div>
                 <div class="row">
                     <div class="col-lg-12"> 
-                        <h2>Quản lý hóa đơn</h2>
+                        <h2 style="color:black;font-weight: bold;">Quản lý hóa đơn</h2>
+                        <h4>Có <span style="color:red;"><?php echo count($_SESSION['rslistBill']); ?> </span> đã được thanh toán</h4>
                         <div class="table-responsive">
                             <table id="table_order" class="table table-bordered table-hover">
                                 <thead>
@@ -25,15 +26,10 @@
 
                                     </tr>
                                 </thead>
-                              <!-- <?php echo '<pre>';
-                                print_r($_SESSION['order']);
-                                echo '</pre>';?>  
-
-                                 -->
                                 <tbody>
                                     <?php                             
                                 $stt=0;
-                                foreach($rsBill as $key => $value){
+                                foreach($rslistBill as $key => $value){
                                    $stt++;
    
                                 ?>

@@ -1,6 +1,6 @@
 
 <form action="" method="POST" role="form">
-							<legend>Thêm mới bàn ăn</legend>
+							<legend style="color:black;font-weight: bold;">Thêm mới bàn ăn</legend>
 
 							<div class="form-group">
                                 <label for="">Loại bàn<span style="color: red;">*</span></label>

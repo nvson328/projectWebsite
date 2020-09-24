@@ -2,11 +2,11 @@
 	<form action="" method='post'>
 	<div class = "row">
 		<div class="col-md-12">
-		<h2>Danh sách món ăn</h2>
+		<h2 style="font-weight: bold;">Danh sách món ăn</h2>
 			<table id="listFood" class="table" style="position: relative;">
 				  <thead>
 				    <tr>
-				      <th>STT</th>
+				      <th>Mã thực đơn</th>
 				      <th>Tên món</th>
 				      <th>Ảnh</th>
 				      <th>Giá tiền</th>
@@ -24,7 +24,7 @@
 
 				  <tbody>
 				    <tr>
-				      <td style='padding-top: 40px; font-size: 20px;' scope="row"><?php echo $stt; ?></td>
+				      <td style='padding-top: 40px; font-size: 20px;' scope="row"><?php echo $value['ma_thuc_don']; ?></td>
 				      <td style='padding-top: 40px; font-size: 20px;'><?= $value['ten_mon_an']?></td>
 				      <td><img style="width:80px; height:80px;" src="publics-admin/images/<?= $value['anh_chi_tiet'] ?>" alt=""></td>
 				      <td style='padding-top: 40px; font-size: 20px;'><?= number_format($value['gia_tien']).'<sup>đ</sup>'; ?></td>

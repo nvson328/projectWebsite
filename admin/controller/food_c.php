@@ -42,7 +42,6 @@
 						$_SESSION['nameFood']=$rs_getnameFood[0]['ten_mon_an'];
 						$_SESSION['category']=$rs_getnameFood[0]['ma_danh_muc'];
 						$_SESSION['price']=$rs_getnameFood[0]['gia_tien'];
-						$_SESSION['price']=$rs_getnameFood[0]['gia_tien'];
 						$fileName_old=$rs_getnameFood[0]['anh_chi_tiet'];
 						if (isset($_POST['btn_edit'])){							
 							$ten_mon_an = $_POST['ten_mon_an'];
@@ -71,7 +70,8 @@
 				break;
 				default:
 					$rs_food= $this->food->getFood_page();
-					
+					$count_food= $this->food->countFood();
+					$_SESSION['count_food']=$count_food;
             		include_once 'views/food/list-foods.php';
             		break;
             }

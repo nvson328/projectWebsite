@@ -22,7 +22,7 @@ class food_m extends Connect{
           }
           $sp_food=5;
           $on_page=($trang-1)*$sp_food;
-          $sql = "SELECT * FROM tbl_thucdon,tbl_danhmuc where tbl_thucdon.ma_danh_muc=tbl_danhmuc.ma_danh_muc limit $on_page,$sp_food ";
+          $sql = "SELECT * FROM tbl_thucdon,tbl_danhmuc where tbl_thucdon.ma_danh_muc=tbl_danhmuc.ma_danh_muc order by ma_thuc_don asc limit $on_page,$sp_food ";
           $pre = $this->pdo->prepare($sql);
           $pre->execute();
           return $pre->fetchAll(PDO::FETCH_ASSOC);
@@ -74,6 +74,13 @@ class food_m extends Connect{
           }else{
             echo "Sửa món ăn thất bại";
           }
+        }
+        public function countFood()
+        {
+            $sql = "SELECT COUNT(*) AS count FROM tbl_thucdon";
+            $pre = $this->pdo->prepare($sql);
+            $pre->execute();
+            return $pre->fetchAll(PDO::FETCH_ASSOC);
         }
     }
 

@@ -8,9 +8,9 @@
     </div>
                 <div class="row">
                     <div class="col-lg-12"> 
-                        <h2 style="font-weight: bold;">Gọi món</h2>
+                        <h2>Gọi món</h2>
                         <div class="table-responsive">
-                            <table id="table_order" class="table table-bordered table-hover">
+                            <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th style="text-align:center;padding-top:15px;">Mã hóa đơn</th>
@@ -23,10 +23,15 @@
 
                                     </tr>
                                 </thead>
+                              <!-- <?php echo '<pre>';
+                                print_r($_SESSION['order']);
+                                echo '</pre>';?>  
+
+                                 -->
                                 <tbody>
                                     <?php                             
                                 $stt=0;
-                                foreach($rsBill as $key => $value){
+                                foreach($rsSearch as $key => $value){
                                    $stt++;
    
                                 ?>
@@ -42,42 +47,16 @@
                                         <td style="text-align:center;padding-top:15px;">
                                            
                                                 <button class="btn btn-danger" onclick="detailsBill(<?= $value['ma_hoa_don']?>)" id="btn_details_<?= $value['ma_hoa_don']?>" value="<?= $value['ma_hoa_don']?>" data-toggle="modal" data-target="#modal-detail" name="details-table">Chi tiết</button>
-                                         
-                                            <a href="index.php?page=list-tables&method=order&id=<?= $value['ma_hoa_don'] ?>">
-                                                <button  class="btn btn-primary" name="order_food" >Gọi món</button>
-                                            </a>
                                         </td>
                                     </tr>  
                                     <?php 
                                     }?>   
                                 </tbody>
-                                    
+                                  
                             </table>
-                        </div>
-                    <!--Phan trang -->
-                        <div style="text-align: center;">
-                        <ul class="pagination">
-                            
-                            <?php
-                                $bill = $this->table->getHoadon();
-                                $bill_count = count($bill);
-                                $bill_page = ceil($bill_count/5);
-                                // echo $bill_count.',,';
-                                // echo $bill_page.',,';
-                                
-                                for($i=1;$i<= $bill_page;$i++){
-                                    // echo '<a style="margin:0 5px;" href="index.php?page=list-tables&method=list&trang='.$i.'">'.$i.'</a>';
-                                    echo '<li class="page-item"><a class="page-link" href="index.php?page=list-tables&method=list&trang='.$i.'">'.$i.'</a></li>';
-        
-                                }
-                            
-                            ?>
-                            
-                            </ul>
+                            <a href="index.php?page=list-tables&method=list">Quay lại</a>  
                         </div>
                     </div>
-                </div>
-                    
                 <!-- /.row -->
 
             </div>

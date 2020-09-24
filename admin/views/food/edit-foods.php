@@ -1,9 +1,9 @@
 <form action="" method="POST" role="form" enctype="multipart/form-data" >
-					<legend>Sửa món ăn</legend>
+					<legend style="color:black;font-weight: bold;">Sửa món ăn</legend>
 				
 					<div class="form-group">
 						<label for="">Tên món ăn</label>
-						<input type="text" name="ten_mon_an" value="<?php if(isset($_SESSION['nameFood'])){ echo $_SESSION['nameFood']; } ?>" require class="form-control" id="" placeholder="Nhập tên món ăn...">
+						<input type="text" name="ten_mon_an" value="<?php if(isset($_SESSION['nameFood'])){ echo $_SESSION['nameFood']; } ?>" required class="form-control" id="" placeholder="Nhập tên món ăn...">
 					</div>
 					<div class="form-group">
 						<label for="">Mã danh mục</label>
@@ -17,7 +17,7 @@
 					</div>
 					<div class="form-group">
 						<label for="">Giá tiền</label>
-						<input type="number" value="<?php if(isset($_SESSION['price'])){ echo $_SESSION['price']; } ?>" name="gia_tien" class="form-control" id="" placeholder="">
+						<input type="number" required value="<?php if(isset($_SESSION['price'])){ echo $_SESSION['price']; } ?>" name="gia_tien" class="form-control" id="" placeholder="">
 					</div>
 					
 					<div class="form-group">

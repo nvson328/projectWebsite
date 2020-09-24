@@ -34,16 +34,15 @@
                     <td colspan="4" style="color:red;font-size:20px;">Tổng tiền :<?php if(isset($_SESSION['sum_details'])){echo number_format($_SESSION['sum_details']).'<sup>đ</sup>';}?></td>  
 
                 </tr>
-                <tr>
+                <!-- <tr>
                   <td>
-                  <?php if(isset(($_SESSION['rsDetails'][0]['status_hoa_don']))&&($_SESSION['rsDetails'][0]['status_hoa_don']==2)){
-                              echo "Đã thanh toán";
-                          }else{
-                              echo "Chưa thanh toán";
-                          }
+                  <?php if(isset(($_SESSION['rsDetails'][0]['status_hoa_don']))&&($_SESSION['rsDetails'][0]['status_hoa_don']==2)){ ?>
+                  <h3 style="color:red;font-weight: bold;">Đã thanh toán</h3> <?php }else{?>
+                              <div><h3 style="color:red; font-weight: bold;">Chưa thanh toán</h3></div>
+                          <?php }
                           ?>
                   </td>
-                </tr>
+                </tr> -->
             </table>
           </div>
         </div>
