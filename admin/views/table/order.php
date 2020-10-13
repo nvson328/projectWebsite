@@ -5,12 +5,12 @@
 				<table class="table">
 					  <thead>
 					    <tr>
-					      <th>STT</th>
-					      <th>Tên món</th>
-					      <th>Ảnh</th>
-					      <th>Giá tiền</th>
-					      <th>Số lượng</th>
-					      <th></th>
+					      <th  style="text-align:center;">STT</th>
+					      <th  style="text-align:center;">Tên món</th>
+					      <th  style="text-align:center;">Ảnh</th>
+					      <th  style="text-align:center;">Giá tiền</th>
+					      <th  style="text-align:center;">Số lượng</th>
+					      <th  style="text-align:center;"></th>
 					    </tr>
 					  </thead>
 					<?php 
@@ -23,14 +23,14 @@
 					?>
 					  <tbody>
 					    <tr>
-					      <th style='padding-top: 40px; font-size: 20px;' scope="row"><?php echo $stt; ?></th>
-					      <td style='padding-top: 40px; font-size: 20px;'><?= $value['ten_mon_an']?></td>
+					      <th style='padding-top: 40px; font-size: 20px; text-align:center;' scope="row"><?php echo $stt; ?></th>
+					      <td style='padding-top: 40px; font-size: 20px;text-align:center;'><?= $value['ten_mon_an']?></td>
 					      <td><img style="width:80px; height:80px;" src="publics-admin/images/<?= $value['anh_chi_tiet'] ?>" alt=""></td>
-					      <td style='padding-top: 40px; font-size: 20px;'><?= number_format($value['gia_tien']).'<sup>đ</sup>'; ?></td>
-					      <td>
+					      <td style='padding-top: 40px; font-size: 20px;text-align:center;'><?= number_format($value['gia_tien']).'<sup>đ</sup>'; ?></td>
+					      <td style="text-align:center;">
                       			<input style='margin-top: 30px;width: 40px; font-size: 20px;' id="btn_qty_<?php echo $value['ma_thuc_don']; ?>" type="number" value="1" min="1" max="50"/>
                     		</td>
-					      <td><button onclick="addOrders(<?= $value['ma_thuc_don'] ?>,<?= $_GET['id'] ?>)" id="btn_<?= $value['ma_thuc_don'] ?>" value="<?= $value['ma_thuc_don'] ?>" style='margin-top: 30px; font-size: 20px;' >Chọn</button></td>
+					      <td style="text-align:center;"><button class="btn" style="margin-top: 30px;" onclick="addOrders(<?= $value['ma_thuc_don'] ?>,<?= $_GET['id'] ?>)" id="btn_<?= $value['ma_thuc_don'] ?>" value="<?= $value['ma_thuc_don'] ?>" style='margin-top: 30px; font-size: 20px;' ><i class="fas fa-check"></i> Chọn</button></td>
 					    </tr>
 					  </tbody>
 					<?php
@@ -40,12 +40,12 @@
 			</div>
 			<div id="load-table-order" class="col-md-4">
 				<table id="table-order" style="margin-left:50px;" class="table" border="1">
-				  <thead class="thead-dark">
+				  <thead class="thead-dark" >
 				    <tr>
-				      <th>Món ăn</th>
-				      <th>Số lượng</th>
-					  <th>Thành tiền</th>
-					  <th>Chức năng</th>
+				      <th  style="text-align:center;">Món ăn</th>
+				      <th  style="text-align:center;">Số lượng</th>
+					  <th  style="text-align:center;">Thành tiền</th>
+					  <th  style="text-align:center;">Chức năng</th>
 				    </tr>
 				  </thead>
 
@@ -61,22 +61,22 @@
 				
 				    <tr>
 				    		
-					      <td><?= $value['ten_mon_an'] ?></td>
-					      <td><?php echo $value['qty']; ?></td>
-					      <td><?= number_format($value['gia_tien']*$value['qty']).'<sup>đ</sup>' ?></td>
-					    	<td><button onclick="del(<?= $value['ma_thuc_don']?>,<?= $_GET['id'] ?>)" id="btn_del_<?=$value['ma_thuc_don'] ?>" value="<?= $value['ma_thuc_don']?>"><i class="far fa-window-close"></i></button></td>
+					      <td  style="text-align:center;"><?= $value['ten_mon_an'] ?></td>
+					      <td  style="text-align:center;"><?php echo $value['qty']; ?></td>
+					      <td  style="text-align:center;"><?= number_format($value['gia_tien']*$value['qty']).'<sup>đ</sup>' ?></td>
+					    	<td  style="text-align:center;"><button class="btn" onclick="del(<?= $value['ma_thuc_don']?>,<?= $_GET['id'] ?>)" id="btn_del_<?=$value['ma_thuc_don'] ?>" value="<?= $value['ma_thuc_don']?>"><i class="fas fa-times"></i></button></td>
 					</tr>
 					
 					<?php }}?>
 					<tr>
-						<td colspan="4"><label style="margin-left:50px;color:red;font-size:20px;">Tổng tiền: <?php if(isset($_SESSION['sum'])){echo number_format($_SESSION['sum']).'<sup>đ</sup>';}else{echo "0<sup>đ</sup>";}  ?></label><br></td>
+						<td colspan="4"><label style="margin-left:50px;color:#e75b1e;font-size:20px;">Tổng tiền: <?php if(isset($_SESSION['sum'])){echo number_format($_SESSION['sum']).'<sup>đ</sup>';}else{echo "0<sup>đ</sup>";}  ?></label><br></td>
 					</tr>
 				  </tbody>
 				</table>
 				
 			</div>
 			
-			<button style="margin-left:200px;" id="btn-done" onclick="done(<?= $_GET['id'] ?>)">Đồng ý</button>
+			<button class="btn" style="margin-left:200px;" id="btn-done" onclick="done(<?= $_GET['id'] ?>)">Đồng ý</button>
 		</div>
 	
  </div>

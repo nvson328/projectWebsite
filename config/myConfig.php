@@ -1,7 +1,10 @@
 <?php 
 	class Connect{
+		// private $conn = 'mysql:host=localhost;dbname=PHP0320E2_nhom4';
+		// private $user = 'PHP0320E2_nhom4';
+		// private $passw = 'PHP0320E2_nhom4*';
 		private $conn = 'mysql:host=localhost;dbname=db_nhahang';
-		private $user = '';
+		private $user = 'root';
 		private $passw = '';
 		protected $pdo = null;
 

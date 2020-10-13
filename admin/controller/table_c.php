@@ -78,7 +78,8 @@
 					$rsTables= $this->table->gettypeTables();
 					if(isset($_POST['add-table'])){
 						$ma_loai_ban = $_POST['ma_loai_ban'];
-    					$this->table->addTables($ma_loai_ban);
+						$ten_ban = $_POST['ten_ban'];
+    					$this->table->addTables($ma_loai_ban, $ten_ban);
 					}
 					include_once'views/table/add-tables.php';
 					break;
@@ -121,6 +122,19 @@
 					
 					include_once 'views/table/detail-bills.php';
 				break;
+				//tổng các hóa đơn
+				case'total-bill':
+					if(isset($_GET['id_order'])){
+					$id_bill=$_GET['id_order'];
+					$rsDetails= $this->table->getDetailsTable($id_bill);
+					$_SESSION['rsDetails'] = $rsDetails;
+					
+					$_SESSION['id_order'] = $id_bill;
+					}
+					$rstotalBill= $this->table->listBill();
+					$_SESSION['rstotalBill']= $rstotalBill;
+					include_once 'views/table/total-bill.php';
+					break; 
 				default:
 				if(isset($_POST['submit_search'])){
 					if(isset($_POST['key'])){
@@ -139,10 +153,18 @@
 					$_SESSION['rsBill']= $rsBill;
 					$count_table= $this->table->countTable();
 					$_SESSION['count_table']=$count_table;
+					
 					$count_bill= $this->table->countBill();
 					$_SESSION['count_bill']=$count_bill;
+					// echo count($_SESSION['count_bill']);
 					
-            		include_once 'views/table/list-tables.php';
+					$doanhthu= $this->table->doanhthu();
+					$_SESSION['doanhthu']= $doanhthu;
+					// echo "<pre>";
+					// print_r($_SESSION['doanhthu']);
+					// echo "</pre>";
+					
+					include_once 'views/table/list-tables.php';
 					break;
 				}
             }

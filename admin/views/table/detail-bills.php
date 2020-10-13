@@ -31,7 +31,7 @@
                     </tbody>
                 <?php } ?>
                 <tr>
-                    <td colspan="4" style="color:red;font-size:20px;">Tổng tiền :<?php if(isset($_SESSION['sum_details'])){echo number_format($_SESSION['sum_details']).'<sup>đ</sup>';}?></td>  
+                    <td colspan="4" style="color: white;font-size:20px;background-color: #e75b1e;">Tổng tiền :<?php if(isset($_SESSION['sum_details'])){echo number_format($_SESSION['sum_details']).'<sup>đ</sup>';}?></td>  
 
                 </tr>
                 <!-- <tr>

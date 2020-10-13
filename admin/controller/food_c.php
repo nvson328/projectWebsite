@@ -21,10 +21,11 @@
 							$ten_mon_an = $_POST['ten_mon_an'];
 							$ma_danh_muc = $_POST['ma_danh_muc'];
 							$gia_tien = $_POST['gia_tien'];
+							$gioi_thieu = $_POST['gioi_thieu'];
 							$file = $_FILES['anh_chi_tiet'];
-							$fileName = time().$file['name'];
+							$fileName = $file['name'];
 							move_uploaded_file($file["tmp_name"], "publics-admin/images/".$fileName);
-							$this->food->addFood($ten_mon_an,$ma_danh_muc,$gia_tien,$fileName);	
+							$this->food->addFood($ten_mon_an,$ma_danh_muc,$gia_tien,$gioi_thieu,$fileName); 
 
 						}
 						$rs_food= $this->food->getFood_page();

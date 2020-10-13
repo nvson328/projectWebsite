@@ -3,7 +3,7 @@
     <div class="row">
         <form class="form-inline" method="post">
             <input type="number"  name="key" class="form-control mb-2 mr-sm-2" placeholder="Nhập số điện thoại" value="<?php if(isset($_POST['key'])){ echo $_POST['key'] ; } ?>">
-        <button type="submit" name="submit_search" class="btn btn-primary mb-2">Tìm kiếm</button>
+            <button type="submit" name="submit_search" style="background-color: #e75b1e;">Tìm kiếm</button>
         </form>
     </div>
                 <div class="row">
@@ -23,11 +23,6 @@
 
                                     </tr>
                                 </thead>
-                              <!-- <?php echo '<pre>';
-                                print_r($_SESSION['order']);
-                                echo '</pre>';?>  
-
-                                 -->
                                 <tbody>
                                     <?php                             
                                 $stt=0;
@@ -46,7 +41,7 @@
                                         
                                         <td style="text-align:center;padding-top:15px;">
                                            
-                                                <button class="btn btn-danger" onclick="detailsBill(<?= $value['ma_hoa_don']?>)" id="btn_details_<?= $value['ma_hoa_don']?>" value="<?= $value['ma_hoa_don']?>" data-toggle="modal" data-target="#modal-detail" name="details-table">Chi tiết</button>
+                                                <button class="" style="background-color: #e75b1e;" onclick="detailsBill(<?= $value['ma_hoa_don']?>)" id="btn_details_<?= $value['ma_hoa_don']?>" value="<?= $value['ma_hoa_don']?>" data-toggle="modal" data-target="#modal-detail" name="details-table">Chi tiết</button>
                                         </td>
                                     </tr>  
                                     <?php 

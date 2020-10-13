@@ -5,8 +5,11 @@
 	class Connect
 	{
 		private $strCon = 'mysql:host=localhost;dbname=db_nhahang';
-		private $user = 'root';
-		private $passw = '';
+    private $user = 'root';
+    private $passw = '';
+		// private $strCon = 'mysql:host=localhost;dbname=db_nhahang';
+		// private $user = 'root';
+		// private $passw = '';
 		protected $pdo = null;
 		function __construct()
 		{

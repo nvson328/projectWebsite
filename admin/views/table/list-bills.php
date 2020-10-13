@@ -1,4 +1,8 @@
-
+<?php 
+    if (isset($_SESSION['stt']) && $_SESSION['stt']==2) {
+        header('Location: index.php');
+    }
+ ?>
 
 <?php include_once 'views/table/detail-bills.php' ?>
 <div class="container-fluid">
@@ -11,7 +15,7 @@
                 <div class="row">
                     <div class="col-lg-12"> 
                         <h2 style="color:black;font-weight: bold;">Quản lý hóa đơn</h2>
-                        <h4>Có <span style="color:red;"><?php echo count($_SESSION['rslistBill']); ?> </span> đã được thanh toán</h4>
+                        <h4>Có <span style="color: #e75b1e;"><?php echo count($_SESSION['rslistBill']); ?> </span> đã được thanh toán</h4>
                         <div class="table-responsive">
                             <table id="table_order" class="table table-bordered table-hover">
                                 <thead>
@@ -44,7 +48,7 @@
                                         
                                         <td style="text-align:center;padding-top:15px;">
                                            
-                                                <button class="btn btn-danger" onclick="bills(<?= $value['ma_hoa_don']?>)" id="btn_detailsBill_<?= $value['ma_hoa_don']?>" value="<?= $value['ma_hoa_don']?>" data-toggle="modal" data-target="#modal-detail" name="details-bills">Chi tiết</button>
+                                                <button class="" style="backgroud-color:transparent; border: none;width: 30px; height: 30px; position:relative;" onclick="bills(<?= $value['ma_hoa_don']?>)" id="btn_detailsBill_<?= $value['ma_hoa_don']?>" value="<?= $value['ma_hoa_don']?>" data-toggle="modal" data-target="#modal-detail" name="details-bills"><img style="width: 30px; height: 30px;position:absolute;left:-2px;top:-2px; " src="../images/icon_details.png" alt=""></button>
                                          
                                           
                                         </td>
@@ -54,6 +58,21 @@
                                 </tbody>
                                     
                             </table>
+                            <?php
+                                date_default_timezone_set('Asia/Ho_Chi_Minh');
+                                $sum_day=0;
+                                $date = date('d/m/Y');
+                                $time_day = strtotime(date('d')-date('m')-date('Y'));
+                                // echo $time_day;
+                                foreach ($_SESSION['doanhthu'] as $key => $value) {
+                                    $time_day = strtotime(date('d').'-'.date('m').'-'.date('Y'));
+                                    $time_order = strtotime($value['ngay_dat_ban']);
+                                    if ($time_day - $time_order==0) {
+                                    $sum_day += $value['tong_tien'];
+
+                                }
+                                } ?>
+                                <h3 style="text-align:right;">Doanh thu trong ngày <?php echo date('d').'/'. date('m') ?>: <span style="color:#e75b1e;"><?php echo number_format($sum_day).'<sup>đ</sup>'; ?></span></h3>
                         </div>
                     <!--Phan trang -->
                         <!-- <div style="text-align: center;">

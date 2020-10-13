@@ -1,3 +1,9 @@
+<?php 
+    if (isset($_SESSION['stt']) && $_SESSION['stt']==2) {
+        header('Location: index.php');
+    }
+ ?>
+
 <div class="container">
 	<form action="" method='post'>
 	<div class = "row">
@@ -10,13 +16,10 @@
 				      <th>Tên món</th>
 				      <th>Ảnh</th>
 				      <th>Giá tiền</th>
-				      <th>Chức năng</th>
+				      <th>Chỉnh sửa món ăn</th>
 				    </tr>
 				  </thead>
 				<?php 
-				// echo '<pre>';
-				// print_r($rs_food);
-				// echo '</pre>';
 				$stt=0;
 				foreach ($rs_food as $key => $value) {
 					$stt++;
@@ -30,7 +33,8 @@
 				      <td style='padding-top: 40px; font-size: 20px;'><?= number_format($value['gia_tien']).'<sup>đ</sup>'; ?></td>
 					  <td style="position: relative;">
 							<a href="index.php?page=list-foods&method=edit&id=<?= $value['ma_thuc_don']?>">
-								<i title="Sửa" class="fas fa-wrench" style="position:absolute; top:40px; left:40px;" name="edit_food"></i>
+								<img style="width: 30px; height: 30px; position: absolute; left: 50px; top: 30px" class ="center" src="../images/edit.png" alt="" name="edit_food">
+								
 							</a>
 					  </td>
 				    </tr>

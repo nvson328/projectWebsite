@@ -54,3 +54,8 @@ function done(id){
 // 		$("#load-listFood").load('index.php?page=list-foods&method=list&id='+ id_delFood +' #table-order');
 // 	});
 // }
+
+
+$('.btn-pic').on('click', function(){
+	$('#pic').trigger('click'); 
+ });

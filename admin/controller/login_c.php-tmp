@@ -1,0 +1,18 @@
+<?php
+
+session_start();
+
+include_once 'model/login_m.php';
+class login_c extends login_m {
+	private $acc;
+	function __construct() {
+		$this->acc = new login_m();
+	}
+
+	public function getAcc($ten_dang_nhap, $mat_khau) {
+		return $this->acc->getAcc($ten_dang_nhap, $mat_khau);
+	}
+
+}
+
+?>

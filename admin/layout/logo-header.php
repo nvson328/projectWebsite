@@ -5,5 +5,5 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">SB Admin</a>
+                <a class="navbar-brand" href="index.php"> <img src="../images/logo.png" style="width: 150px; height: 30px" alt=""></a>
             </div>

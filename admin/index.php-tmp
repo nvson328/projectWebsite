@@ -1,10 +1,10 @@
-<?php 
-    ob_start();
-    session_start();
-    //session_destroy();
- ?>
- <?php if(!isset($_SESSION['ma_tai_khoan'])){
-    header('Location: login.php');
+<?php
+ob_start();
+session_start();
+//session_destroy();
+?>
+ <?php if (!isset($_SESSION['ma_tai_khoan'])) {
+	header('Location: login.php');
 }
 ?>
 <!DOCTYPE html>
@@ -35,7 +35,7 @@
 
     <!-- Custom Fonts -->
     <link href="publics-admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link href="publics-admin/css/myCSS.css" rel="stylesheet" type="text/css">
     <script src="resource/ckd/ckeditor.js"></script>
@@ -56,62 +56,62 @@
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <?php include_once'layout/logo-header.php'; ?>
-            <!-- Top Menu Items -->
-            <?php include_once'layout/nav-header.php'; ?>
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <?php include_once'layout/nav-left.php'; ?>
-            <!-- /.navbar-collapse -->
+<?php include_once 'layout/logo-header.php';?>
+<!-- Top Menu Items -->
+<?php include_once 'layout/nav-header.php';?>
+<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+<?php include_once 'layout/nav-left.php';?>
+<!-- /.navbar-collapse -->
         </nav>
 
         <div id="page-wrapper">
 
-            <?php 
-                if (isset($_GET['page'])) {
-                    $page = $_GET['page'];
-                }else{
-                    $page = 'home';
-                }
+<?php
+if (isset($_GET['page'])) {
+	$page = $_GET['page'];
+} else {
+	$page = 'home';
+}
 
-                switch ($page) {
-                    // case 'login':
-                    //     include_once 'controller/login_c.php';
-                    //     $acc = new login_c();
-                    //     $acc->acc();
-                        // break;
-                    case 'list-tables':
-                        include_once 'controller/table_c.php';
-                        $table = new table_c();
-                        $table->tables();
-                        break;
-                    case 'list-foods':
-                        include_once 'controller/food_c.php';
-                        $food = new food_c();
-                        $food->food();
-                        break;
-                    case 'add-foods':
-                        include_once 'controller/food_c.php';
-                        $food = new food_c();
-                        $food->food();
-                        break;
-                    case 'add-tables':
-                        include_once 'controller/table_c.php';
-                        $table = new table_c();
-                        $table->tables();
-                        break;
-                    case 'logout':
-                        include_once 'controller/logout_c.php';
-                        
-                        break;
-                    default:
-                        include_once'layout/main-wrapper.php';                  
-                        break;
-                }
+switch ($page) {
+		// case 'login':
+		//     include_once 'controller/login_c.php';
+		//     $acc = new login_c();
+		//     $acc->acc();
+		// break;
+	case 'list-tables':
+		include_once 'controller/table_c.php';
+		$table = new table_c();
+		$table->tables();
+		break;
+	case 'list-foods':
+		include_once 'controller/food_c.php';
+		$food = new food_c();
+		$food->food();
+		break;
+	case 'add-foods':
+		include_once 'controller/food_c.php';
+		$food = new food_c();
+		$food->food();
+		break;
+	case 'add-tables':
+		include_once 'controller/table_c.php';
+		$table = new table_c();
+		$table->tables();
+		break;
+	case 'logout':
+		include_once 'controller/logout_c.php';
 
-             ?>
-            <!-- /.container-fluid -->
+		break;
+	default:
+		include_once 'layout/main-wrapper.php';
+		break;
+}
 
-        </div>  
+?>
+<!-- /.container-fluid -->
+
+        </div>
         <!-- /#page-wrapper -->
 
     </div>

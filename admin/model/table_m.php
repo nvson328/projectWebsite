@@ -44,10 +44,11 @@ class table_m extends Connect{
             return $pre->fetchAll(PDO::FETCH_ASSOC);
         }
         //Thêm bàn ăn
-        public function addTables($ma_loai_ban){
-            $sql = "INSERT INTO tbl_banan (ma_loai_ban) VALUES (:ma_loai_ban);";
+        public function addTables($ma_loai_ban, $ten_ban){
+            $sql = "INSERT INTO tbl_banan (ma_loai_ban, ten_ban) VALUES (:ma_loai_ban, :ten_ban);";
             $pre = $this->pdo->prepare($sql);
-			$pre->bindParam(':ma_loai_ban', $ma_loai_ban);
+            $pre->bindParam(':ma_loai_ban', $ma_loai_ban);
+            $pre->bindParam(':ten_ban', $ten_ban);
 	
 		    if($pre->execute()){
 		    	header('location: index.php?page=list-tables');
@@ -129,7 +130,7 @@ class table_m extends Connect{
             }
         }
         public function showBill(){
-            $sql = "select *from tbl_hoadon,tbl_khachhang where tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang and status_hoa_don=2";
+            $sql = "select *from tbl_hoadon,tbl_khachhang where tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang and status_hoa_don=2 and DATEDIFF(CURDATE(),ngay_dat_ban) = 0";
             $pre = $this->pdo->prepare($sql);
             $pre->execute();
             return $pre->fetchAll(PDO::FETCH_ASSOC);
@@ -143,12 +144,25 @@ class table_m extends Connect{
         }
         public function countTable()
         {
-            $sql = "SELECT COUNT(*) AS count FROM tbl_hoadon";
+            $sql = "SELECT COUNT(*) AS count FROM tbl_banan";
             $pre = $this->pdo->prepare($sql);
             $pre->execute();
             return $pre->fetchAll(PDO::FETCH_ASSOC);
         }
-        
+        //doanh thu
+        public function doanhthu(){
+            $sql = "select tong_tien, ngay_dat_ban from tbl_hoadon,tbl_chitietban where tbl_hoadon.ma_hoa_don=tbl_chitietban.ma_hoa_don and status_hoa_don=2";
+            $pre = $this->pdo->prepare($sql);
+            $pre->execute();
+            return $pre->fetchAll(PDO::FETCH_ASSOC);
+            }
+            //liệt kê tổng hóa đơn
+            public function listBill(){
+                $sql = "select *from tbl_hoadon,tbl_khachhang where tbl_hoadon.ma_khach_hang=tbl_khachhang.ma_khach_hang AND status_hoa_don=2 order by ngay_dat_ban asc";
+                $pre = $this->pdo->prepare($sql);
+                $pre->execute();
+                return $pre->fetchAll(PDO::FETCH_ASSOC);
+                }
 }
 
 ?>
