@@ -64,6 +64,7 @@
 	                	$rs_idfood = $this->table->getIdfood($id_food);
 	                	$_SESSION['cart'][$id_food] = $rs_idfood[0];
 						$_SESSION['cart'][$id_food]['qty']= $qty; 
+						
 					
 	                }
 	                // echo "<pre>";

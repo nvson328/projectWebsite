@@ -11,7 +11,7 @@
                                         <img style="border-radius:50px;" src="../images/icon_table.png" alt="">
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge" ><?php echo $_SESSION['count_table'][0]['count'] ?></div>
+                                        <div class="huge" ><?php if(isset($_SESSION['count_table'][0]['count'])){echo $_SESSION['count_table'][0]['count'];} ?></div>
                                         <div>Bàn</div>
                                     </div>
                                 </div>
@@ -55,7 +55,8 @@
                                     <img src="../images/icon_hoa_don.png" alt="">
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge"><?php echo $_SESSION['count_bill'][0]['COUNT'] ?></div>
+                                        <div class="huge"><?php if(isset($_SESSION['count_bill'][0]['COUNT'])){ echo $_SESSION['count_bill'][0]['COUNT']; } ?>
+                                        </div>
                                         <div>Hóa đơn đã thanh toán</div>
                                     </div>
                                 </div>

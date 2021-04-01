@@ -26,15 +26,13 @@
                                 <tbody>
                                 <?php                             
                                             $stt=0;
-                                            date_default_timezone_set('Asia/Ho_Chi_Minh');
-                                        $sum_day=0;
-                                        $date = date('d/m/Y');
-                                        $time_day = strtotime(date('d')-date('m')-date('Y'));
+                                        //     date_default_timezone_set('Asia/Ho_Chi_Minh');
+                                        // $sum_day=0;
+                                        // $date = date('d/m/Y');
+                                        // $time_day = strtotime(date('d')-date('m')-date('Y'));
                                             foreach($rsBill as $key => $value){
                                         $stt++;
-                                        $time_day = strtotime(date('d').'-'.date('m').'-'.date('Y'));
-                                            $time_order = strtotime($value['ngay_dat_ban']);
-                                            if ($time_day - $time_order==0) { ?>
+                                         ?>
                                                 <tr>
                                         <td class="" style="position: relative;text-align:center;padding-top:15px;"><?php echo $value['ma_hoa_don'] ?></td>
                                         <td class="" style="position: relative;text-align:center;padding-top:15px;"><?php echo $value['ten_khach_hang'] ?></td>
@@ -52,29 +50,8 @@
                                             </a>
                                         </td>
                                     </tr> 
-                                            <?php }else{ ?>
-                                                <tr>
-                                        <td class="" style="position: relative;text-align:center;padding-top:15px;"><?php echo $value['ma_hoa_don'] ?></td>
-                                        <td class="" style="position: relative;text-align:center;padding-top:15px;"><?php echo $value['ten_khach_hang'] ?></td>
-                                        <td style="text-align:center;padding-top:15px;"><?php echo $value['so_dien_thoai'] ?></td>
-                                        <td class="" style="position: relative;text-align:center;padding-top:15px;"> <?php echo $value['ma_ban'] ?></td>
-                                        <td class="" style="position: relative;text-align:center;padding-top:15px;"><?php echo $value['ngay_dat_ban'] ?></td>
-                                        <td class="" style="position: relative;text-align:center;padding-top:15px;"><?php echo $value['gio_dat_ban'] ?></td>
-                                        
-                                        <td style="text-align:center;padding-top:15px;">
-                                           
-                                        <button class="btn" onclick="detailsBill(<?= $value['ma_hoa_don']?>)" id="btn_details_<?= $value['ma_hoa_don']?>" value="<?= $value['ma_hoa_don']?>" data-toggle="modal" data-target="#modal-detail" name="details-bills">
-                                            <i class="fa fa-bars" ></i> Chi tiết
-                                        </button>
-                                         
-                                        
-                                        </td>
-                                    </tr> 
                                             <?php }?>
-
                                 
-                                    <?php 
-                                    }?>
                                 </tbody>
                                     
                             </table>
